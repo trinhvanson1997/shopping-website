@@ -47,16 +47,18 @@
             margin-left: auto;
             margin-right: auto;
         }
-        header {
+    /*    header {
             background-color: lavender;
-        }
+        }*/
        body {
-           background-color: while ;
+           background-color: white ;
+           background-image: url("../images/background.jpg");
+           background-repeat: repeat;
        }
 
-        footer {
+  /*      footer {
             background-color: white;
-        }
+        }*/
     </style>
 
 </head>
@@ -67,7 +69,7 @@
         <div class="container-fluid" style="background-color: #F0F0E9">
             <div class="row">
                 <div class="col-md-3">
-                    <a href="#"><img src="../images/logo.png
+                    <a href="#"><img src="../images/logo.png"
                                      style="width: 300px; height: 50px;"></a>
                 </div>
                 <div class="col-md-6">
@@ -76,8 +78,8 @@
                          style="float: right">
                         <input type="text" class="form-control"> <span
                                 class="input-group-btn">
-								<button class="btn btn-default" type="button">Go!</button>
-							</span>
+                                <button class="btn btn-default" type="button">Go!</button>
+                            </span>
                     </div>
 
                 </div>
@@ -178,7 +180,7 @@
     </div>
 
 </header>
-<hr>
+
 <!-- BODYYYYYYYYYYYYYYYY-->
 <section class="section">
     <div class="row">
@@ -324,8 +326,8 @@
                                                       data-slider-value="[109000,169299000]"
                                                       style="display: none;" data-value="109000,169299000">
                                                <!-- <p class="slider-title">
-                                                   <span>109.000 þ</span>
-                                                   <span>169.299.000 þ</span>
+                                                   <span>109.000 þ</span>
+                                                   <span>169.299.000 þ</span>
                                                </p> -->
                                                <input class="slide-input slide-from" value="109000"> <span>-</span>
                                                <input class="slide-input slide-to" value="169299000">
