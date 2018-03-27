@@ -1,0 +1,17 @@
+body {
+    background-color: #b2bec3;
+}
+
+.container {
+    margin-top: 50px;
+}
+
+.panel-heading {
+    background-color: #a29bfe;
+    color: white;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}

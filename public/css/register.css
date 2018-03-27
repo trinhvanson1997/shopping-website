@@ -1,0 +1,18 @@
+body {
+    background-color: #b2bec3;
+}
+
+.container {
+    margin-top: 0px;
+}
+
+.panel-heading {
+    background-color: #a29bfe;
+    color: white;
+    text-align: center;
+}
+
+span {
+    color: red;
+
+}
