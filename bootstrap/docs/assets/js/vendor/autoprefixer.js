@@ -34812,7 +34812,7 @@
                             "url": "https://developer.mozilla.org/en-US/docs/Security/HTTP_Strict_Transport_Security",
                             "title": "MDN article"
                         }, {
-                            "url": "https://www.owasp.org/index.php/HTTP_Strict_Transport_Security",
+                            "url": "https://www.owasp.org/login.php/HTTP_Strict_Transport_Security",
                             "title": "OWASP article"
                         }],
                         "categories": ["Other"],

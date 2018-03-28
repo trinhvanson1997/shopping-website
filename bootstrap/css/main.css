@@ -263,7 +263,7 @@ a#scrollUp i{
   outline: medium none;
   padding-left: 10px;
   width: 155px;
-  background-image: url(../images/home/searchicon.png);
+
   background-repeat: no-repeat;
   background-position: 130px;
 }
@@ -580,9 +580,7 @@ ul.sub-menu {
 	  background: #FE980F;
 }
 
-.item {
-  padding-left: 100px;
-}
+
 
 
 .pricing {
@@ -1192,14 +1190,8 @@ h2.title {
   right: 0;
 }
 
-#similar-product .carousel-inner .item{
-	padding-left:0px;
-}
 
-#similar-product .carousel-inner .item img {
-  display: inline-block;
-  margin-left: 15px;
-}
+
 
 .item-control {
   position: absolute;

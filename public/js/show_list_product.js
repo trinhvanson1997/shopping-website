@@ -17,7 +17,7 @@ function showListProducts(msg) {
     for(var i=0;i<msg.length;i++){
         price = msg[i].sell_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
 
-        command += '<div class="col-md-4">' +
+        command += '<div class="col-md-3">' +
             '        <div class="product-image-wrapper" id="product'+msg[i].id+'">' +
             '                                <div class="single-products">' +
             '                                    <div class="productinfo text-center">' +

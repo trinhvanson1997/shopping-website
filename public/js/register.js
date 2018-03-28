@@ -42,7 +42,7 @@ btnRegister.addEventListener('click', function (e) {
                 }
                 else if (msg == 'success') {
                     alert("Đăng ký thành công");
-                    window.location = "index.php";
+                    window.location = "login.php";
                 }
             }
         }
@@ -54,7 +54,7 @@ btnRegister.addEventListener('click', function (e) {
 
 btnCancel.addEventListener('click', function (e) {
     e.preventDefault();
-    window.location = 'index.php';
+    window.location = 'login.php';
 });
 
 
