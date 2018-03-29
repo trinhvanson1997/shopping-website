@@ -26,12 +26,23 @@ function showListProducts(msg) {
             '                                        <p title="'+msg[i].name+'">'+msg[i].name+'</p>' +
             '                                        <a href="#" class="btn btn-default add-to-cart"><i' +
             '                                                    class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
-            '                                    </div>' +
 
-            '                                </div>' +
+            '<div class="overlay">' +
+                '<div class="info">' +
+            '   <div class="texttt"> <p> Tên: '+msg[i].name+'</p></div>' +
+            '   <div class="texttt"><p> NSX: '+msg[i].brand+'</p></div>' +
+            '   <div class="texttt"><p> Size:'+msg[i].size+'</p></div>' +
+            '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
+            '   <div class="texttt"><p> SL : '+msg[i].inventory+'</p></div>' +
+            '                                        <a href="#" class="btn btn-default add-to-cart"><i' +
+            '                                                    class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
+                '</div>'+
+            '</div>'+
+            '</div>'+
+            '</div>'+
 
-            '                            </div>' +
-            '                        </div>   ';
+            '          </div>' +
+            '         </div>   ';
     }
 
     document.getElementById('list-product').innerHTML = command;
