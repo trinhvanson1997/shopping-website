@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -23,8 +24,9 @@
     <link href="../bootstrap/css/pagination.css" rel="stylesheet">
 </head>
 <body>
-<?php
-    include_once 'head2.php';
-?>
+    <?php if(empty($_SESSION['username'])){
+      echo "rong";
+    }
+    ?>
 </body>
 </html>

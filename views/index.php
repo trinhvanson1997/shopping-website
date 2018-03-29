@@ -78,18 +78,39 @@
                                 </li>
                             </ul>
                             <div id="top-right">
-                                <form class="navbar-form navbar-right" role="search">
+                                <?php
+                                if(empty($_SESSION['username'])){
+                                    echo '<form class="navbar-form navbar-right" role="search">
                                     <div class="form-group">
                                         <input type="text" class="form-control" id="username" placeholder="Username">
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Password">
                                     </div>
                                     <button  class="btn btn-default" onclick="checkLogin()" >Login</button>
                                     <span>Or</span>
                                     <button  class="btn btn-default" ><a href="register.php" style="color:black ;text-decoration: none;">Register</a></button>
                                 </form>
+                            </div>';
+                                }
+                                else{
+                                    echo '  <div class="nav navbar-right" style="margin-right: 10px;">
+
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="line-height: 50px;color: #777;text-decoration: none;">
+                                    Xin chào, '. $_SESSION['username'] .' <span class="caret"></span></a>
+                                <ul class="dropdown-menu" >
+                                    <li>  <a href="change_info.php" >Tài khoản</a></li>
+                                    <li><a href="" >Giỏ hàng</a></li>
+                                    <li><a href="" >Thoát</a></li>
+                                </ul>
                             </div>
+
+                        </div>';
+                                }
+                                ?>
+
+
 
                         </div>
                     </center>

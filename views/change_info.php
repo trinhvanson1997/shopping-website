@@ -1,4 +1,4 @@
-<?php include_once "head2.php" ?>
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -55,7 +55,7 @@
                             <label for="">Username</label>
                             <input type="text" class="form-control" name="" id="username"
                                    placeholder="Type your username here" value="<?php
-                            echo $_SESSION["sess_username"];
+                            echo $_SESSION['username'];
                             ?>">
                         </div>
                         <div class="form-group">

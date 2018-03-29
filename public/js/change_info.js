@@ -6,8 +6,8 @@ var tfuser = document.getElementById('username');
 var tfpass = document.getElementById('password');
 
 
-document.getElementById("btnChange").addEventListener('click', function (ev) {
-    ev.preventDefault();
+document.getElementById("btnChange").addEventListener('click', function () {
+    event.preventDefault();
 
     var data = new FormData;
     data.append('user', tfuser.value);
@@ -30,22 +30,22 @@ document.getElementById("btnChange").addEventListener('click', function (ev) {
                 alert("Cập nhật thông tin thành công.");
 
             }
-            window.location = 'home.php';
+            window.location = 'index.php';
         }
     }
     xhttp.open("POST", "../controllers/change_info_process.php");
     xhttp.send(data);
-
+return false;
 })
 
-document.getElementById("btnCancel").addEventListener('click', function (ev) {
-    ev.preventDefault();
-    window.location = 'home.php';
+document.getElementById("btnCancel").addEventListener('click', function () {
+    event.preventDefault();
+    window.location = 'index.php';
 })
 
 
 var x = new XMLHttpRequest();
-x.onreadystatechange = function (ev) {
+x.onreadystatechange = function () {
     if (this.readyState == 4 && this.status == 200) {
 
         //convert array string to abject

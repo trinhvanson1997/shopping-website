@@ -21,8 +21,8 @@ if ($result->num_rows > 0) {
     //if account is correct, nagative to homepage and save $session value
 
     $row = $result->fetch_assoc();
-    $_SESSION["username"] = $row['username'];
-    $_SESSION["position"] = $row['position'];
+    $_SESSION['username'] = $row['username'];
+    $_SESSION['position'] = $row['position'];
     $position = $row['position'];
     $status = $row['status'];
 

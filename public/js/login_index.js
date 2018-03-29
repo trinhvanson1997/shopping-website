@@ -15,21 +15,11 @@ function checkLogin() {
 
                 if(msg.res == "correct"){
                     if(msg.status == "active"){
-                       header_top = document.getElementById('top-right');
-                       header_top.innerHTML = ' <div class="nav navbar-right" style="margin-right: 10px;"> ' +
-                           '<div class="dropdown">' +
-                           '                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="line-height: 50px;color: #777;text-decoration: none;">' +
-                           '                                   Xin chào, '+msg.username+' <span class="caret"></span></a>' +
-                           '                           <ul class="dropdown-menu" >' +
-                           '                               <li>  <a href="" >Tài khoản</a></li>' +
-                           '                               <li><a href="" >Giỏ hàng</a></li>' +
-                           '                               <li><a href="" >Thoát</a></li>' +
-                           '                           </ul>' +
-                           '                       </div>'+
-                           '                       </div>';
+                        alert("Bạn đã đăng nhập thành công");
+                        location.reload();
                     }
                     else if(msg.status == "locked"){
-                        alert("Tài khoản này đã bị khóa!")
+                        alert("Tài khoản này đã bị khóa!");
                     }
                     else if(msg.status == "waiting"){
                         alert("Tài khoản này đang chờ được phê duyệt");
