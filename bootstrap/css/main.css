@@ -874,8 +874,14 @@ h2.title {
 
 
 .productinfo p{
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 10px;
+  padding-right: 10px;
   font-family: 'Roboto', sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 400;
   color: #696763;
 }
