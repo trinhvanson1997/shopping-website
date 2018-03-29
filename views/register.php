@@ -10,66 +10,102 @@
 
     <link rel="stylesheet" type="text/css" href="../public/css/register.css">
     <title>ĐĂNG KÝ</title>
+
+    <style>
+        body {
+            padding-top:50px;
+        }
+        fieldset {
+            border: thin solid #ccc;
+            border-radius: 4px;
+            padding: 20px;
+            padding-left: 40px;
+            background: #fbfbfb;
+        }
+        legend {
+            color: #678;
+        }
+        .form-control {
+            width: 95%;
+        }
+        label small {
+            color: #678 !important;
+        }
+        span.req {
+            color:maroon;
+            font-size: 112%;
+        }
+    </style>
 </head>
 <body>
 
 
 <div class="section">
+
     <div class="container">
-        <div class="col-md-6 col-md-offset-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <h1>ĐĂNG KÝ</h1>
-                </div>
-                <div class="panel-body">
-                    <form action="" method="post" role="form">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
 
-                        <div id="errors">
+                    <fieldset>
 
-                        </div>
+                    <form >
+                        <legend class="text-center">REGISTER<span class="req"><small> required *</small></span></legend>
                         <div class="form-group">
-
-                            <input type="text" class="form-control" name="" id="name" placeholder="Họ Tên">
-                        </div>
-                        <div class="form-group">
-
-                            <input type="date" class="form-control" name="" id="birthday"
-                                   placeholder="Ngày Sinh">
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" class="form-control" name="" id="address"
-                                   placeholder="Địa Chỉ">
-                        </div>
-                        <div class="form-group">
-
-                            <input type="text" class="form-control" name="" id="phone"
-                                   placeholder="Số Điện Thoại">
+                            <label for="name"><span class="req">* </span> Họ Tên: </label>
+                            <input class="form-control" type="text"  name="name" id = "name" onkeyup = "Validate(this)" required />
+                            <div id="errFirst"></div>
                         </div>
 
                         <div class="form-group">
-
-                            <input type="text" class="form-control" name="" id="username"
-                                   placeholder="Tên Tài Khoản">
+                            <label for="birthday"><span class="req">* </span> Ngày Sinh: </label>
+                            <input class="form-control" type="date"  id = "birthday" name="birthday" required />
+                            <div id="errFirst"></div>
                         </div>
+
                         <div class="form-group">
-
-                            <input type="password" class="form-control" name="" id="password"
-                                   placeholder="Mật Khẩu">
+                            <label for="address"><span class="req">* </span> Địa Chỉ: </label>
+                            <input class="form-control" required type="text" name="address" id = "address"  />
+                            <div class="status" id="status"></div>
                         </div>
 
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <button class="btn btn-primary btn-block" id="btnRegister">ĐĂNG KÝ</button>
-                            </div>
-                            <div class="col-md-6">
-                                <button class="btn btn-primary btn-block" id="btnCancel">HỦY</button>
-                            </div>
+                        <div class="form-group">
+                            <label for="phonenumber"><span class="req">* </span> Số Điện Thoại: </label>
+                            <input required type="text" id="phonenumber" name="phonenumber" class="form-control phone" maxlength="28" onkeyup="validatephone(this);"/>
                         </div>
+
+                        <div class="form-group">
+                            <label for="username"><span class="req">* </span> Tên Tài Khoản:  </label>
+                            <input class="form-control" type="text" id = "username"  name="username" required />
+                            <div id="errLast"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password"><span class="req">* </span> Mật Khẩu: </label>
+                            <input required  type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="password" name="password"/>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="password2"><span class="req">* </span> Xác Nhận Mật Khẩu: </label>
+                            <input required  type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="password2" name="password2"/>
+                        </div>
+
+
+                        <div class="form-group text-center">
+                            <input class="btn btn-success"  id="btnRegister" value="Register" onclick="register()">
+                            <input class="btn btn-success" id="btnCancel" value="Cancel" onclick="cancel()">
+                        </div>
+
                     </form>
-                </div>
-            </div>
+
+                    </fieldset>
+
+
+
+            </div><!-- ends col-6 -->
+
+
+
         </div>
     </div>
 </div><!--/section-->

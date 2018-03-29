@@ -102,14 +102,14 @@
                         </ul>
                         <form class="navbar-form navbar-right" role="search">
                             <div class="form-group">
-                                <input type="text" class="form-control" name="username" placeholder="Username">
+                                <input type="text" class="form-control" id="username" placeholder="Username">
                             </div>
                             <div class="form-group">
-                                <input type="text" class="form-control" name="password" placeholder="Password">
+                                <input type="text" class="form-control" id="password" placeholder="Password">
                             </div>
-                            <button type="submit" class="btn btn-default">Login</button>
+                            <button  class="btn btn-default" onclick="checkLogin()" >Login</button>
                             <span>Or</span>
-                            <button type="button" class="btn btn-default" ><a href="register.php" style="color:black ;">Register</a></button>
+                            <button  class="btn btn-default" ><a href="register.php" style="color:black ;">Register</a></button>
                         </form>
 
                     </div>
@@ -169,7 +169,7 @@
     </div>-->
 
     <!-- CREATE BANNER SLIDESHOW -->
-    <div class="header-middle" id="banner">
+    <div class="header-middle" id="banner" style="margin-top: 55px;">
         <div class="container">
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel" >
@@ -294,8 +294,7 @@
   </div>
 </footer>
 
-<script src="../public/js/show_list_product.js">
-
-</script>
+<script src="../public/js/show_list_product.js"></script>
+<script src="../public/js/login_index.js"></script>
 </body>
 </html>

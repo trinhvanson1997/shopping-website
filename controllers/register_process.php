@@ -24,6 +24,7 @@ if ($rs1->num_rows > 0) {
 
     $sql_insert2 = "INSERT INTO customer VALUES (null,'$name','$birthday', '$address','$phone','$user')";
     if ($conn->query($sql_insert) && $conn->query($sql_insert2)) {
+        header("https://google.com");
         echo "success";
     }
 }

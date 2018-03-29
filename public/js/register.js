@@ -2,26 +2,30 @@ var btnRegister = document.getElementById("btnRegister");
 var btnCancel = document.getElementById("btnCancel");
 
 
-btnRegister.addEventListener('click', function (e) {
-    e.preventDefault();
+function register(){
+
+    event.preventDefault();
     var user = document.getElementById("username");
     var pass = document.getElementById("password");
     var name = document.getElementById("name");
     var birthday = document.getElementById("birthday");
     var phone = document.getElementById("phone");
     var address = document.getElementById("address");
+    var pass2 = document.getElementById("password2");
 
     color = user.style.getPropertyValue("borderColor");
-
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
 
     if (name.value == "" || phone.value == "" || address.value == "" || user.value == "" || pass.value == "") {
-        document.getElementById("errors").innerHTML = '<div class="alert alert-danger">\n' +
+      /*  document.getElementById("errors").innerHTML = '<div class="alert alert-danger">\n' +
             '                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">\n' +
             '                                        &times;\n' +
             '                                    </button>\n' +
             '                                    <strong>Warning!</strong> Một số trường còn trống\n' +
-            '                                </div>';
+            '                                </div>';*/
 
+    alert("Các trường dữ liệu không được để trống, ĐM");
     }
     else {
         var data = new FormData;
@@ -50,12 +54,13 @@ btnRegister.addEventListener('click', function (e) {
         xhttp.send(data);
 
     }
-})
+    return false;
+}
 
-btnCancel.addEventListener('click', function (e) {
-    e.preventDefault();
-    window.location = 'login.php';
-});
+  function cancel(){
+    event.preventDefault();
+    window.location = 'index.php';
+}
 
 
 
