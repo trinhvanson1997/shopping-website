@@ -13,7 +13,7 @@
 
     <style>
         body {
-            padding-top:50px;
+            padding-top:0px;
         }
         fieldset {
             border: thin solid #ccc;
@@ -34,6 +34,9 @@
         span.req {
             color:maroon;
             font-size: 112%;
+        }
+        .btn {
+            margin-right: 20px;
         }
     </style>
 </head>
@@ -71,7 +74,8 @@
 
                         <div class="form-group">
                             <label for="phonenumber"><span class="req">* </span> Số Điện Thoại: </label>
-                            <input required type="text" id="phonenumber" name="phonenumber" class="form-control phone" maxlength="28" onkeyup="validatephone(this);"/>
+                            <input required type="text" id="phonenumber" name="phonenumber" class="form-control phone" maxlength="28" ;"/>
+                            <span id="msgphone" class="confirmMessage"></span>
                         </div>
 
                         <div class="form-group">
@@ -87,7 +91,8 @@
 
                         <div class="form-group">
                             <label for="password2"><span class="req">* </span> Xác Nhận Mật Khẩu: </label>
-                            <input required  type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="password2" name="password2"/>
+                            <input required  type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="password2" name="password2" onkeyup="checkPass(); return false;"/>
+                            <span id="confirmMessage" class="confirmMessage"></span>
                         </div>
 
 

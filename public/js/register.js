@@ -1,10 +1,52 @@
 var btnRegister = document.getElementById("btnRegister");
 var btnCancel = document.getElementById("btnCancel");
 
+function validatePhone() {
+
+    phone = document.getElementById("phonenumber").value;
+
+    msg = document.getElementById("msgphone");
+
+    var filter = /^[0-9-+]+$/;
+    if(!filter.test(phone)){
+       msg.innerHTML = '<p>Số điện thoại bạn nhập không hợp lệ</p>';
+       window.exit;
+    }
+else{
+        msg.innerHTML = '<p></p>';
+    }
+
+}
+
+function checkPass()
+{
+
+    var pass1 = document.getElementById('password');
+    var pass2 = document.getElementById('password2');
+
+    var message = document.getElementById('confirmMessage');
+
+    var goodColor = "#66cc66";
+    var badColor = "#ff6666";
+
+    if(pass1.value == pass2.value){
+
+        pass2.style.backgroundColor = goodColor;
+        message.style.color = goodColor;
+        message.innerHTML = "Khớp mật khẩu";
+    }else{
+
+        pass2.style.backgroundColor = badColor;
+        message.style.color = badColor;
+        message.innerHTML = "Không khớp mật khẩu đã nhập ở trên";
+    }
+}
 
 function register(){
 
     event.preventDefault();
+
+
     var user = document.getElementById("username");
     var pass = document.getElementById("password");
     var name = document.getElementById("name");
@@ -14,8 +56,7 @@ function register(){
     var pass2 = document.getElementById("password2");
 
     color = user.style.getPropertyValue("borderColor");
-    var goodColor = "#66cc66";
-    var badColor = "#ff6666";
+
 
     if (name.value == "" || phone.value == "" || address.value == "" || user.value == "" || pass.value == "") {
       /*  document.getElementById("errors").innerHTML = '<div class="alert alert-danger">\n' +
@@ -28,6 +69,8 @@ function register(){
     alert("Các trường dữ liệu không được để trống, ĐM");
     }
     else {
+        validatePhone();
+
         var data = new FormData;
         data.append('user', user);
         data.append('pass', pass);

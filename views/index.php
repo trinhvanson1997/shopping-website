@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -14,161 +15,89 @@
           href="../bootstrap/css/bootstrap.min.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-
+    <link href="../bootstrap/css/main.css" rel="stylesheet">
     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="../bootstrap/css/font-awesome.min.css" rel="stylesheet">
     <link href="../bootstrap/css/prettyPhoto.css" rel="stylesheet">
     <link href="../bootstrap/css/price-range.css" rel="stylesheet">
     <link href="../bootstrap/css/animate.css" rel="stylesheet">
-    <link href="../bootstrap/css/main.css" rel="stylesheet">
+
     <link href="../bootstrap/css/responsive.css" rel="stylesheet">
     <link href="../bootstrap/css/pagination.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-    <script src="js/html5shiv.js"></script>
-    <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <link rel="shortcut icon" href="images/ico/favicon.ico">
-    <link rel="apple-touch-icon-precomposed" sizes="144x144"
-          href="images/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114"
-          href="images/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72"
-          href="images/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed"
-          href="images/ico/apple-touch-icon-57-precomposed.png">
 
 
     <style>
 
-
-    /*    header {
-            background-color: lavender;
-        }*/
-    /*   body {
-           background-color: white ;
-           background-image: url("../images/background.jpg");
-           background-repeat: repeat;
-       }*/
-
-  /*      footer {
-            background-color: white;
-        }*/
     </style>
 
 </head>
 <body>
 
 <header>
-    <div class="header-top" id="home">
-        <div class="navbar navbar-default navbar-fixed-top">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">BK Shop</a>
-                </div>
-                <center>
-                    <div class="navbar-collapse collapse" id="navbar-main">
-                        <ul class="nav navbar-nav">
-                            <li class="active"><a href="#home">HOME</a>
-                            </li>
 
-                            <li><a href="#products">Products</a>
-                            </li>
-                            <li><a href="#location">Locate</a>
-                            </li>
-
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                <ul class="dropdown-menu">
-                                    <li><a href="#">Action</a>
-                                    </li>
-                                    <li><a href="#">Another action</a>
-                                    </li>
-                                    <li><a href="#">Something else here</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">Separated link</a>
-                                    </li>
-                                    <li class="divider"></li>
-                                    <li><a href="#">One more separated link</a>
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                        <form class="navbar-form navbar-right" role="search">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="username" placeholder="Username">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="password" placeholder="Password">
-                            </div>
-                            <button  class="btn btn-default" onclick="checkLogin()" >Login</button>
-                            <span>Or</span>
-                            <button  class="btn btn-default" ><a href="register.php" style="color:black ;">Register</a></button>
-                        </form>
-
-                    </div>
-                </center>
-            </div>
-        </div>
-    </div>
-  <!--  <div class="header-bottom">
-
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3">
+    <div class="header_top" id="header-top">
+        <div class="header-top" id="home">
+            <div class="navbar navbar-default navbar-fixed-top">
                 <div class="container-fluid">
-                    <nav class="nav navbar-default">
-                        <div class="nav navbar-header">
-                            <a class="navbar-brand href="#" >HOME</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="#myNavbar">
+                    <div class="navbar-header">
+                        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#">BK Shop</a>
+                    </div>
+                    <center>
+                        <div class="navbar-collapse collapse" id="navbar-main">
                             <ul class="nav navbar-nav">
+                                <li class="active"><a href="#home">HOME</a>
+                                </li>
 
-                                <li class="dropdown"><a class="dropdown-toggle"
-                                                        data-toggle="dropdown" href="#">Áo nam <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="https://google.com.vn">Áo cộc tay</a></li>
-                                        <li><a href="#">Áo sơ mi</a></li>
-                                        <li><a href="#">Áo len</a></li>
-                                    </ul></li>
+                                <li><a href="#products">Products</a>
+                                </li>
+                                <li><a href="#location">Locate</a>
+                                </li>
 
-                                <li class="dropdown"><a class="dropdown-toggle"
-                                                        data-toggle="dropdown" href="#">Áo nữ <span class="caret"></span></a>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
                                     <ul class="dropdown-menu">
-                                        <li><a
-                                                    href="https://vui69.net/hinh-nen-girl-xinh/m/bikini-xinh/b/bo-anh-girl-xinh-bikini-cung-voi-duong-cong-nong-bong.html">Bikini</a></li>
-                                        <li><a href="#">Áo dài</a></li>
-                                        <li><a href="#">Áo mưa</a></li>
-                                    </ul></li>
-                                <li class="dropdown"><a class="dropdown-toggle"
-                                                        data-toggle="dropdown" href="#">Quần nam <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Quần âu</a></li>
-                                        <li><a href="#">Quần jean</a></li>
-                                        <li><a href="#">Quần chun</a></li>
-                                    </ul></li>
-                                <li class="dropdown"><a class="dropdown-toggle"
-                                                        data-toggle="dropdown" href="#">Quần nữ <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Quần ren</a></li>
-                                        <li><a href="#">Quần ngắn 10cm</a></li>
-                                        <li><a href="#">Quần váy ngắn</a></li>
-                                    </ul></li>
+                                        <li><a href="#">Action</a>
+                                        </li>
+                                        <li><a href="#">Another action</a>
+                                        </li>
+                                        <li><a href="#">Something else here</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">Separated link</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#">One more separated link</a>
+                                        </li>
+                                    </ul>
+                                </li>
                             </ul>
+                            <div id="top-right">
+                                <form class="navbar-form navbar-right" role="search">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="username" placeholder="Username">
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" id="password" placeholder="Password">
+                                    </div>
+                                    <button  class="btn btn-default" onclick="checkLogin()" >Login</button>
+                                    <span>Or</span>
+                                    <button  class="btn btn-default" ><a href="register.php" style="color:black ;text-decoration: none;">Register</a></button>
+                                </form>
+                            </div>
+
                         </div>
-                    </nav>
+                    </center>
                 </div>
             </div>
         </div>
     </div>
-    </div>-->
-
-    <!-- CREATE BANNER SLIDESHOW -->
+ <!-- CREATE BANNER SLIDESHOW -->
     <div class="header-middle" id="banner" style="margin-top: 55px;">
         <div class="container">
 
@@ -215,21 +144,45 @@
 <div class="container" style="padding-bottom: 20px;">
     <p class="modal-title text-center" style="color:orange; font-size: 30px; font-family: 'Roboto', sans-serif" id="products">PRODUCTS</p>
 </div>
-<section class="section">
-   <div class="container" >
-       <div class="row">
+<section class="section" >
+   <div class="container"style="background-color: #b2bec3">
+       <div class="row"  style="margin-top: 20px">
             <!-- create menu sidebar -->
-           <div class="col-md-3 sidebar-offcanvas" id="sidebar">
-               <ul class="list-group">
-                   <li class="list-group-item active text-center " style="background-color: #428bca;color:white;">DANH MỤC SẢN PHẨM</li>
-                   <a href="#" class="list-group-item">QUẦN NAM</a>
-                   <a href="#" class="list-group-item">ÁO NAM</a>
-                   <a href="#" class="list-group-item">QUẦN NỮ</a>
-                   <a href="#" class="list-group-item">ÁO NỮ</a>
 
-               </ul>
-           </div><!--/.sidebar-offcanvas-->
+           <div class=" list-group col-md-3 " style="padding-left: 15px;">
+               <div class="list-group-item  text-center " style="background-color: #428bca;color:white;">DANH MỤC SẢN PHẨM</div>
 
+               <a href="#demo1" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>THỜI TRANG NỮ  <span class="caret"></span></b></a>
+               <div class="collapse" id="demo1">
+                   <a href="" class="list-group-item">ÁO</a>
+                   <a href="" class="list-group-item">VÁY</a>
+                   <a href="" class="list-group-item">THUN NỈ</a>
+                   <a href="" class="list-group-item">TRANG PHỤC ĐÔNG</a>
+               </div>
+
+               <a href="#demo2" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>THỜI TRANG NAM  <span class="caret"></span></b></a>
+               <div class="collapse" id="demo2">
+                   <a href="" class="list-group-item">ÁO SƠ MI</a>
+                   <a href="" class="list-group-item">ÁO KHOÁC & VEST</a>
+                   <a href="" class="list-group-item">QUẦN</a>
+                   <a href="" class="list-group-item">ÁO LEN</a>
+               </div>
+
+               <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>TÚI SÁCH  <span class="caret"></span></b></a>
+               <div class="collapse" id="demo3">
+                   <a href="" class="list-group-item">TÚI XÁCH NỮ</a>
+                   <a href="" class="list-group-item">TÚI ĐEO CHÉO NỮ</a>
+                   <a href="" class="list-group-item">BALO THỜI TRANG</a>
+                   <a href="" class="list-group-item">PHỤ KIỆN TÚI VÍ</a>
+               </div>
+
+               <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>THỂ THAO & DU LỊCH  <span class="caret"></span></b></a>
+               <div class="collapse" id="demo4">
+                   <a href="" class="list-group-item">BALO</a>
+                   <a href="" class="list-group-item">DỤNG CỤ THỂ DỤC</a>
+
+               </div>
+           </div>
            <!-- SHOW PRODUCTS -->
            <div class="col-md-9 ">
                <div class="row" >
@@ -264,6 +217,7 @@
     <p class="modal-title text-center" style="color:orange; font-size: 30px; font-family: 'Roboto', sans-serif" id="products">LOCATION</p>
 </div>
 <footer>
+    <!-- create maps -->
   <div class="container" id="location">
       <div class="row">
           <div class="col-md-8 col-md-offset-2">
@@ -292,6 +246,15 @@
           </div>
       </div>
   </div>
+
+    <!-- create footer -->
+    <div class="nav navbar-default">
+        <div class="container  ">
+            <div class="navbar-text navbar-right">
+                &copy; Copyright 2018, Hanoi University Of Science And Technology
+            </div>
+        </div>
+    </div>
 </footer>
 
 <script src="../public/js/show_list_product.js"></script>

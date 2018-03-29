@@ -21,13 +21,13 @@ if ($result->num_rows > 0) {
     //if account is correct, nagative to homepage and save $session value
 
     $row = $result->fetch_assoc();
-    $_SESSION["sess_username"] = $row['username'];
-    $_SESSION["sess_position"] = $row['position'];
+    $_SESSION["username"] = $row['username'];
+    $_SESSION["position"] = $row['position'];
     $position = $row['position'];
     $status = $row['status'];
 
 
-    $arr = array("res" => "correct", "position" => $position, "status" => $status);
+    $arr = array("username" => $row['username'],"res" => "correct", "position" => $position, "status" => $status);
     $file = json_encode($arr);
     echo $file;
     /* $sql_get_name = "SELECT name FROM account WHERE username = '".$username."'";

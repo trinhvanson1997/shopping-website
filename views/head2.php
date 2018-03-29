@@ -34,7 +34,7 @@
             <div class="dropdown">
                 <button class="btn btn-primary dropdown-toggle" type="button"
                         data-toggle="dropdown"><span>Xin chào, <?php
-                        echo $_SESSION["sess_username"];
+                        echo $_SESSION["username"];
                         ?></span><span class="caret"></span></button>
                 <ul class="dropdown-menu">
                     <li><a href="change_info.php">Tài khoản</a></li>
