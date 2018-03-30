@@ -133,11 +133,11 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active" >
-                        <img src="../images/la.jpg" alt="Los Angeles" style="width:100%;height: 400px;">
+                        <img src="../images/img1.png" alt="Los Angeles" style="width:100%;height: 400px;">
                     </div>
 
                     <div class="item">
-                        <img src="../images/chicago.jpg" alt="Chicago" style="width:100%;height: 400px;">
+                        <img src="../images/img2.png" alt="Chicago" style="width:100%;height: 400px;">
                     </div>
 
                     <div class="item">
@@ -216,15 +216,8 @@
 
                 <!-- create pagination -->
                <div class="text-center">
-                   <div class="pagination" >
-                       <a href="#">&laquo;</a>
-                       <a href="#">1</a>
-                       <a href="#" class="active">2</a>
-                       <a href="#">3</a>
-                       <a href="#">4</a>
-                       <a href="#">5</a>
-                       <a href="#">6</a>
-                       <a href="#">&raquo;</a>
+                   <div class="pagination" id="pagination">
+
                    </div>
                </div>
            </div>

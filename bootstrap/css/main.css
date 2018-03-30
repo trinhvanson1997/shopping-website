@@ -847,6 +847,7 @@ h2.title {
 	border:1px solid #F7F7F5;
 	overflow: hidden;
 	margin-bottom:30px;
+
 }
 
 .single-products {
@@ -896,14 +897,11 @@ h2.title {
 
 }
 
-.productinfo .info{
-  width: 100%;
-  height: 100%;
-  margin: 10px 5px 0px 5px;
-}
+
 
 .productinfo img{
   width: 100%;
+
 }
 
 .productinfo{
@@ -922,18 +920,25 @@ h2.title {
   width: 0;
   height:100%;
   transition: .5s ease;
+
 }
 
 .overlay a {
   position: absolute;
   bottom: 0;
-  left:28%;
+
+}
+.overlay .info {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .texttt {
   word-wrap: break-word;
   color: white;
   font-size: 20px;
-  position: page;
+
   top: 10px;
   left: 10px;
 
