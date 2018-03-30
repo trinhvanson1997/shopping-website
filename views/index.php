@@ -175,32 +175,32 @@
 
                <a href="#demo1" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>THỜI TRANG NỮ  <span class="caret"></span></b></a>
                <div class="collapse" id="demo1">
-                   <a href="" class="list-group-item">ÁO</a>
-                   <a href="" class="list-group-item">VÁY</a>
-                   <a href="" class="list-group-item">THUN NỈ</a>
-                   <a href="" class="list-group-item">TRANG PHỤC ĐÔNG</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">ÁO</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">VÁY</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">THUN NỈ</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">TRANG PHỤC ĐÔNG</a>
                </div>
 
                <a href="#demo2" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>THỜI TRANG NAM  <span class="caret"></span></b></a>
                <div class="collapse" id="demo2">
-                   <a href="" class="list-group-item">ÁO SƠ MI</a>
-                   <a href="" class="list-group-item">ÁO KHOÁC & VEST</a>
-                   <a href="" class="list-group-item">QUẦN</a>
-                   <a href="" class="list-group-item">ÁO LEN</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">ÁO SƠ MI</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">ÁO KHOÁC & VEST</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">QUẦN</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">ÁO LEN</a>
                </div>
 
                <a href="#demo3" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>TÚI SÁCH  <span class="caret"></span></b></a>
                <div class="collapse" id="demo3">
-                   <a href="" class="list-group-item">TÚI XÁCH NỮ</a>
-                   <a href="" class="list-group-item">TÚI ĐEO CHÉO NỮ</a>
-                   <a href="" class="list-group-item">BALO THỜI TRANG</a>
-                   <a href="" class="list-group-item">PHỤ KIỆN TÚI VÍ</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">TÚI XÁCH NỮ</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">TÚI ĐEO CHÉO NỮ</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">BALO THỜI TRANG</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">PHỤ KIỆN TÚI VÍ</a>
                </div>
 
                <a href="#demo4" class="list-group-item list-group-item-success" data-toggle="collapse" ><b>THỂ THAO & DU LỊCH  <span class="caret"></span></b></a>
                <div class="collapse" id="demo4">
-                   <a href="" class="list-group-item">BALO</a>
-                   <a href="" class="list-group-item">DỤNG CỤ THỂ DỤC</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">BALO</a>
+                   <a href="" class="list-group-item" style="padding-left: 40px;">DỤNG CỤ THỂ DỤC</a>
 
                </div>
            </div>

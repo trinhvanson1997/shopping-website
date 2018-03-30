@@ -80,7 +80,7 @@ document.getElementById('pagination').innerHTML = command;
 }
 
 function nextPage(numberPage,curPage) {
-   
+
     if(curPage < numberPage){
         loadData(curPage+1);
     }
