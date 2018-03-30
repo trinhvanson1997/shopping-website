@@ -28,10 +28,10 @@ function printBody(msg) {
 
         if (msg[i].status == 'active') {
             //vì có cả thanh tiêu đề hàng 0 ta bắt đầu với hàng 1
-            command += "<td ><i class='fa fa-lock blue' title='khóa' style='cursor: pointer' onclick='lock(" + (i + 1) + ",5)'></i><span> \ </span> <i class='fa fa-trash-o' title='xóa' style='cursor: pointer' onclick='delete_cus(" + (i + 1) + ",5)'></i></td>" +
+            command += "<td ><i class='fa fa-lock blue' title='khóa' style='cursor: pointer;padding-right: 10px' onclick='lock(" + (i + 1) + ",5)'></i><span> \ </span> <i class='fa fa-trash-o' title='xóa' style='cursor: pointer' onclick='delete_cus(" + (i + 1) + ",5)'></i></td>" +
                 "</tr>";
         } else {
-            command += "<td ><i class='fa fa-unlock blue' title='mở khóa' style='cursor: pointer' onclick='unlock(" + (i + 1) + ",5)'></i>  <i class='fa fa-trash-o' title='xóa' style='cursor: pointer' onclick='delete_cus(" + (i + 1) + ",5)'></i></td>" +
+            command += "<td ><i class='fa fa-unlock blue' title='mở khóa' style='cursor: pointer;padding-right: 10px' onclick='unlock(" + (i + 1) + ",5)'></i>  <i class='fa fa-trash-o' title='xóa' style='cursor: pointer' onclick='delete_cus(" + (i + 1) + ",5)'></i></td>" +
                 "</tr>";
         }
     }

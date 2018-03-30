@@ -35,7 +35,7 @@ function showListProducts(msg) {
             '                                        <img src="../images/product'+msg[i].id+'.jpg" alt=""  />' +
             '                                        <h2>'+price+'</h2>' +
             '                                        <p title="'+msg[i].name+'">'+msg[i].name+'</p>' +
-            '                                        <a href="#" class="btn btn-default add-to-cart" style="text-align: center"><i' +
+            '                                        <a href="." class="btn btn-default add-to-cart" style="text-align: center"><i' +
             '                                                    class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
 
             '<div class="overlay">' +
@@ -46,8 +46,8 @@ function showListProducts(msg) {
             '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
             '   <div class="texttt"><p> SL : '+msg[i].inventory+'</p></div>' +
             '<div class="info">' +
-            '                                        <a href="#" class="btn btn-default add-to-cart"><i' +
-            '                                                    class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
+            '   <a href="index.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'" class="btn btn-default add-to-cart"><i' +
+            '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
                 '</div>'+
             '</div>'+
             '</div>'+
@@ -63,7 +63,7 @@ function showListProducts(msg) {
 function showPagination(numberPage,curPage) {
 
 
-    command = '<a href="#products" onclick="prevPage('+numberPage+','+curPage+')">&laquo;</a>';
+    command = '<a href="#product" onclick="prevPage('+numberPage+','+curPage+')">&laquo;</a>';
         for(i=1;i<=numberPage;i++){
            if(i == curPage){
 

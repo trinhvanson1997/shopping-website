@@ -1,20 +1,9 @@
-<?php include_once "head2.php" ?>
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>HOME - Khách Hàng</title>
+<?php require "header.php" ?>
+
+
+
 </head>
-<body>
-
-
-<div class="section">
+<div class="section" style="margin-top: 50px;">
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-12">

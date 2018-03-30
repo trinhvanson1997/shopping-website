@@ -10,7 +10,7 @@ function validatePhone() {
     var filter = /^[0-9-+]+$/;
     if(!filter.test(phone)){
        msg.innerHTML = '<p>Số điện thoại bạn nhập không hợp lệ</p>';
-       window.exit;
+
     }
 else{
         msg.innerHTML = '<p></p>';
@@ -51,33 +51,29 @@ function register(){
     var pass = document.getElementById("password");
     var name = document.getElementById("name");
     var birthday = document.getElementById("birthday");
-    var phone = document.getElementById("phone");
+    var phone = document.getElementById("phonenumber");
     var address = document.getElementById("address");
     var pass2 = document.getElementById("password2");
 
     color = user.style.getPropertyValue("borderColor");
 
 
-    if (name.value == "" || phone.value == "" || address.value == "" || user.value == "" || pass.value == "") {
-      /*  document.getElementById("errors").innerHTML = '<div class="alert alert-danger">\n' +
-            '                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">\n' +
-            '                                        &times;\n' +
-            '                                    </button>\n' +
-            '                                    <strong>Warning!</strong> Một số trường còn trống\n' +
-            '                                </div>';*/
+    if (name.value == ""  || address.value == "" || user.value == "" || pass.value == "" || phone.value == "") {
 
     alert("Các trường dữ liệu không được để trống, ĐM");
     }
     else {
-        validatePhone();
+
 
         var data = new FormData;
-        data.append('user', user);
-        data.append('pass', pass);
-        data.append('name', name);
-        data.append('birthday', birthday);
-        data.append('phone', phone);
-        data.append('address', address);
+        data.append('user', user.value);
+        data.append('pass', pass.value);
+        data.append('name', name.value);
+        data.append('birthday', birthday.value);
+        data.append('phone', phone.value);
+        data.append('address', address.value);
+
+
 
         var xhttp = new XMLHttpRequest();
         xhttp.onreadystatechange = function (ev) {
@@ -89,7 +85,7 @@ function register(){
                 }
                 else if (msg == 'success') {
                     alert("Đăng ký thành công");
-                    window.location = "login.php";
+                    window.location = "index.php";
                 }
             }
         }
@@ -97,7 +93,7 @@ function register(){
         xhttp.send(data);
 
     }
-    return false;
+return false;
 }
 
   function cancel(){

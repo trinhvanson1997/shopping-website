@@ -55,7 +55,7 @@
                         <legend class="text-center">REGISTER<span class="req"><small> required *</small></span></legend>
                         <div class="form-group">
                             <label for="name"><span class="req">* </span> Họ Tên: </label>
-                            <input class="form-control" type="text"  name="name" id = "name" onkeyup = "Validate(this)" required />
+                            <input class="form-control" type="text"  name="name" id = "name" required />
                             <div id="errFirst"></div>
                         </div>
 
@@ -86,19 +86,19 @@
 
                         <div class="form-group">
                             <label for="password"><span class="req">* </span> Mật Khẩu: </label>
-                            <input required  type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="password" name="password"/>
+                            <input required  type="password" class="form-control inputpass"  id="password" name="password"/>
                         </div>
 
                         <div class="form-group">
                             <label for="password2"><span class="req">* </span> Xác Nhận Mật Khẩu: </label>
-                            <input required  type="password" class="form-control inputpass" minlength="4" maxlength="16"  id="password2" name="password2" onkeyup="checkPass(); return false;"/>
+                            <input required  type="password" class="form-control inputpass"   id="password2" name="password2" onkeyup="checkPass(); return false;"/>
                             <span id="confirmMessage" class="confirmMessage"></span>
                         </div>
 
 
                         <div class="form-group text-center">
-                            <input class="btn btn-success"  id="btnRegister" value="Register" onclick="register()">
-                            <input class="btn btn-success" id="btnCancel" value="Cancel" onclick="cancel()">
+                        <button class="btn btn-success"  id="btnRegister"  onclick="register()">Register</button>
+                        <button class="btn btn-success"  id="btnCancel"  onclick="cancel()">Cancel</button>
                         </div>
 
                     </form>

@@ -19,7 +19,8 @@ function loadData() {
                     "<td>waiting</td>" +
 
                     //vì có cả thanh tiêu đề hàng 0 ta bắt đầu với hàng 1
-                    "<td><button onclick='accept(" + (i + 1) + ",5)'>accept</button> / <button onclick='deny(" + (i + 1) + ",5)'>deny</button></td>" +
+                    "<td><i class='fa fa-check' title='Chấp nhận' style='cursor: pointer;padding-right: 10px' onclick='accept(" + (i + 1) + ",5)'></i>" +
+                    "<i class='fa fa-times' title='Xóa khỏi duyệt' style='cursor: pointer;padding-right: 10px' onclick='deny(" + (i + 1) + ",5)'></i></td>" +
                     "</tr>";
             }
             document.getElementById('table_body').innerHTML = command;

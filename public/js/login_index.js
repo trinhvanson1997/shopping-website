@@ -35,3 +35,7 @@ function checkLogin() {
     }
     return false;
 }
+
+function logout() {
+    
+}
