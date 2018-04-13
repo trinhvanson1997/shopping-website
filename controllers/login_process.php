@@ -30,10 +30,7 @@ if ($result->num_rows > 0) {
     $arr = array("username" => $row['username'],"res" => "correct", "position" => $position, "status" => $status);
     $file = json_encode($arr);
     echo $file;
-    /* $sql_get_name = "SELECT name FROM account WHERE username = '".$username."'";
-     $rs = mysqli_query($conn, $sql_get_name);
-     $row_name = mysqli_fetch_row($rs);
-     $_SESSION["sess_name"] = $row_name[0];*/
+
 
 } else {
     $arr = array("res" => "incorrect", "position" => "", "status" => "");

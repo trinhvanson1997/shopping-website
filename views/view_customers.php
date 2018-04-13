@@ -14,7 +14,7 @@
                     <div class="panel-body">
                         <table class="table table-bordered " id="table_waiting">
                             <thead >
-                            <tr ">
+                            <tr >
                                 <th style="text-align: center;">ID</th>
                                 <th style="text-align: center;">Họ Tên</th>
                                 <th style="text-align: center;">Ngày Sinh</th>

@@ -32,16 +32,16 @@ document.getElementById("btnChange").addEventListener('click', function () {
             }
             window.location = 'index.php';
         }
-    }
+    };
     xhttp.open("POST", "../controllers/change_info_process.php");
     xhttp.send(data);
 return false;
-})
+});
 
 document.getElementById("btnCancel").addEventListener('click', function () {
     event.preventDefault();
     window.location = 'index.php';
-})
+});
 
 
 var x = new XMLHttpRequest();
@@ -59,7 +59,7 @@ x.onreadystatechange = function () {
 
     }
 
-}
+};
 var str = tfuser.value;
 
 x.open('GET', '../controllers/getInfoByUsername.php?username=' + str, true);

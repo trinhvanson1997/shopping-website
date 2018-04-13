@@ -17,7 +17,7 @@ function loadData(page) {
             }
             showPagination(number,page);
         }
-    }
+    };
     xhttp.open("GET", "../controllers/get_all_products.php?page="+page);
     xhttp.send();
 }
@@ -32,7 +32,7 @@ function showListProducts(msg) {
             '        <div class="product-image-wrapper" id="product'+msg[i].id+'">' +
             '                                <div class="single-products">' +
             '                                    <div class="productinfo text-center">' +
-            '                                        <img src="../images/product'+msg[i].id+'.jpg" alt=""  />' +
+            '                                        <img src="../images/'+ msg[i].img +'" alt=""  />' +
             '                                        <h2>'+price+'</h2>' +
             '                                        <p title="'+msg[i].name+'">'+msg[i].name+'</p>' +
             '                                        <a href="." class="btn btn-default add-to-cart" style="text-align: center"><i' +
@@ -42,11 +42,11 @@ function showListProducts(msg) {
 
             '   <div class="texttt"> <p> Tên: '+msg[i].name+'</p></div>' +
             '   <div class="texttt"><p> NSX: '+msg[i].brand+'</p></div>' +
-            '   <div class="texttt"><p> Size:'+msg[i].size+'</p></div>' +
+            '   <div class="texttt"><p> Size: '+msg[i].size+'</p></div>' +
             '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
-            '   <div class="texttt"><p> SL : '+msg[i].inventory+'</p></div>' +
+            '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
             '<div class="info">' +
-            '   <a href="index.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'" class="btn btn-default add-to-cart"><i' +
+            '   <a href="index.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'"  class="btn btn-default add-to-cart"><i' +
             '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
                 '</div>'+
             '</div>'+
@@ -85,7 +85,7 @@ function nextPage(numberPage,curPage) {
         loadData(curPage+1);
     }
     else{
-        return;
+
     }
 }
 
@@ -94,6 +94,6 @@ function prevPage(numberPage,curPage) {
         loadData(curPage-1);
     }
     else{
-        return;
+
     }
 }

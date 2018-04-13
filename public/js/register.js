@@ -88,7 +88,7 @@ function register(){
                     window.location = "index.php";
                 }
             }
-        }
+        };
         xhttp.open("POST", "../controllers/register_process.php");
         xhttp.send(data);
 

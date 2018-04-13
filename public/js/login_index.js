@@ -29,7 +29,7 @@ function checkLogin() {
                     alert("Thông tin tài khoản hoặc mật khẩu không chính xác!");
                 }
             }
-        }
+        };
         xhttp.open("GET", "../controllers/login_process.php?username="+username+"&password="+password);
         xhttp.send();
     }

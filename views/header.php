@@ -95,7 +95,8 @@
                             </div>';
                                 }
                                 else{
-                                    echo '  <div class="nav navbar-right" style="margin-right: 10px;">
+                                   if($_SESSION['position'] == 'manager'){
+                                       echo '  <div class="nav navbar-right" style="margin-right: 10px;">
 
                             <div class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
@@ -103,7 +104,7 @@
                                     Xin chào, '. $_SESSION['username'] .' <span class="caret"></span></a>
                                 <ul class="dropdown-menu" >
                                     <li>  <a href="change_info.php" >Tài khoản</a></li>
-                                    <li><a href="" >Giỏ hàng</a></li>
+                                  
                                      <li><a href="view_waiting.php" >Duyệt tài khoản</a></li>
                                       <li><a href="view_customers.php" >Danh sách KH</a></li>
                                     <li><a href="#" >Thoát</a></li>
@@ -111,6 +112,27 @@
                             </div>
 
                         </div>';
+                                   }
+                                   else{
+                                       echo '  <div class="nav navbar-right">
+                             
+                                
+                             
+                            <div class="dropdown">
+                           <span style="padding-right: 20px;line-height: 50px;"><i class="fa fa-shopping-cart" style="font-size: 30px; color:orange;" ></i></span>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                                style="line-height: 50px;color: #777;text-decoration: none;font-size: 17px;">
+                                    Xin chào, '. $_SESSION['username'] .' <span class="caret"></span></a>
+                                <ul class="dropdown-menu" >
+                                    <li>  <a href="change_info.php" >Tài khoản</a></li>
+                                    <li><a href="cart.php" >Giỏ hàng</a></li>
+                                   
+                                    <li><a href="#" >Thoát</a></li>
+                                </ul>
+                            </div>
+
+                        </div>';
+                                   }
                                 }
                                 ?>
 
