@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body style="background: url("../images/chicago.jpg")">
 
 <header>
 
@@ -47,7 +47,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a class="navbar-brand" href="index.php">BK Shop</a>
+                        <a class="navbar-brand" style="font-size: 35px;">BK Shop</a>
                     </div>
                     <center>
                         <div class="navbar-collapse collapse" id="navbar-main">

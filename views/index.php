@@ -154,36 +154,7 @@
         </div>
     </div>
 </footer>
-<?php
 
-if(isset($_GET['action'])){
-
-    if(isset($_SESSION['username'])){
-
-
-        if( $_GET['action'] == 'add'){
-            $id = $_GET['id'];
-            $name = $_GET['name'];
-            $price = $_GET['price'];
-
-            //Neu da co san pham nay trong gio hang, tang so luong len 1
-            if(isset($_SESSION['cart'][$id])){
-                $_SESSION['cart'][$id]['quantity']++;
-            }
-            else{
-                $_SESSION['cart'][$id] = array(
-                    "name"  => $name,
-                    "quantity" => 1,
-                    "price" => $price
-                );
-            }
-        }
-    }
-    else{
-        echo "<html><script>alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ');</script></html>";
-    }
-}
-?>
 <script src="../public/js/show_list_product.js"></script>
 <script src="../public/js/login_index.js"></script>
 </body>

@@ -21,6 +21,8 @@ function loadData(page) {
     xhttp.open("GET", "../controllers/get_all_products.php?page="+page);
     xhttp.send();
 }
+
+//trang bat dau la trang 1
 window.onload = loadData(1);
 
 function showListProducts(msg) {
@@ -46,7 +48,7 @@ function showListProducts(msg) {
             '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
             '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
             '<div class="info">' +
-            '   <a href="index.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'"  class="btn btn-default add-to-cart"><i' +
+            '   <a href="cart.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'"  class="btn btn-default add-to-cart"><i' +
             '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
                 '</div>'+
             '</div>'+
