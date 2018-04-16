@@ -23,11 +23,21 @@ if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
     $_SESSION['username'] = $row['username'];
     $_SESSION['position'] = $row['position'];
+
+    $_SESSION['cart'] =Array();
+    
     $position = $row['position'];
     $status = $row['status'];
 
+    $sql = "SELECT * FROM customer WHERE username = '" . $username . "' ;";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
 
-    $arr = array("username" => $row['username'],"res" => "correct", "position" => $position, "status" => $status);
+    $_SESSION['id'] = $row['id'];
+    $_SESSION['name'] = $row['name'];
+
+
+    $arr = array("username" => $_SESSION['username'],"name" =>$_SESSION['name'],"res" => "correct", "position" => $position, "status" => $status);
     $file = json_encode($arr);
     echo $file;
 

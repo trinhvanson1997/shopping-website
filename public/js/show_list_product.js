@@ -4,6 +4,7 @@ function loadData(page) {
     xhttp.onreadystatechange = function (ev) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             msg = JSON.parse(this.responseText);
+            
             showListProducts(msg);
 
             number = msg[msg.length-1].count ;
@@ -48,7 +49,7 @@ function showListProducts(msg) {
             '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
             '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
             '<div class="info">' +
-            '   <a href="cart.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'"  class="btn btn-default add-to-cart"><i' +
+            '   <a href="cart.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'&inventory='+msg[i].inventory+'"  class="btn btn-default add-to-cart"><i' +
             '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
                 '</div>'+
             '</div>'+

@@ -1,45 +1,59 @@
-<?php require 'header.php';
+<?php
+require 'header.php';
 
-    if (isset($_GET['action'])) {
+if (isset($_GET['action'])) {
 
-        if (isset($_SESSION['username'])) {
+    if (isset($_SESSION['username'])) {
 
 
-            if ($_GET['action'] == 'add') {
-                $id = $_GET['id'];
-                $name = $_GET['name'];
-                $price = $_GET['price'];
+        if ($_GET['action'] == 'add') {
+            $id = $_GET['id'];
+            $name = $_GET['name'];
+            $price = $_GET['price'];
+            $inventory = $_GET['inventory'];
 
-                //Neu da co san pham nay trong gio hang, tang so luong len 1
-                if (isset($_SESSION['cart'][$id])) {
-                    $_SESSION['cart'][$id]['quantity']++;
-                } else {
-                    $_SESSION['cart'][$id] = array(
-                        "name" => $name,
-                        "quantity" => 1,
-                        "price" => $price
-                    );
-                }
-//                echo "<pre>";
-//                print_r($_SESSION);
-//                echo "<pre>";
-                showTableCart();
-            } else if ($_GET['action'] == "delete") {
-                $id = $_GET['id'];
-                unset($_SESSION['cart'][$id]);
-                if (count($_SESSION['cart']) == 0) {
-                    showMessage();
-                } else showTableCart();
+            //Neu da co san pham nay trong gio hang, tang so luong len 1
+            if (isset($_SESSION['cart'][$id])) {
+                $_SESSION['cart'][$id]['quantity']++;
+            } else {
+                $_SESSION['cart'][$id] = array(
+                    "name" => $name,
+                    "quantity" => 1,
+                    "price" => $price,
+                    "inventory" => $inventory
+                );
             }
+           /*   */
+          
+        } else if ($_GET['action'] == "delete") {
+            $id = $_GET['id'];
+            unset($_SESSION['cart'][$id]);
+      
 
 
         } else {
 
-            echo "<html><script>alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ');</script></html>";
-            header('index.php');
+              echo "<html><script>alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ');</script></html>";
+           echo "<script>window.location = 'index.php'</script>";
+         
         }
-    }
 
+    }
+}
+
+
+    if(isset($_SESSION['username'])){
+        if (count($_SESSION['cart']) == 0) {
+
+        showMessage();
+        }
+        else showTableCart();
+    }
+    else {
+
+        echo "<html><script>alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ');</script></html>";
+        echo "<script>window.location = 'index.php'</script>";
+    }
 ?>
 
 <?php
@@ -49,11 +63,12 @@ function showTableCart()
 
 <section>
     <div class="container" style="margin-top: 50px;">
-        <div class="col-md-12 text-center" >
+        <div class="row">
+            <div class="col-md-12 text-center" >
             <h1 style="font-size: 65px;color:orange;">Cart</h1>
         </div>
         <div class="col-md-12">
-            <table class="table table-hover table-bordered text-center">
+            <table class="table table-hover table-bordered text-center" id="tableCart">
                 <thead>
                 <tr>
                     <th>
@@ -71,12 +86,16 @@ function showTableCart()
                     <th>
                         Tạm tính
                     </th>
+                    <th colspan="" rowspan="" headers="" scope="">
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
 
                 ';
-        $total = 0;
+    $total = 0;
+    $row = 1;
+    $col = 4;
 
     foreach ($_SESSION['cart'] as $id => $value) {
         $temp = intval($value['price']) * intval($value['quantity']);
@@ -86,34 +105,49 @@ function showTableCart()
                     <td>' . $id . '</td>
                     <td>' . $value['name'] . '</td>
                     <td>' . number_format($value['price']) . ' VNĐ</td>
-                    <td><input class="text-center" type="text" value="' . $value['quantity'] . '" size="3"></td>
+                    <td><div>
+                        <button class="btn btn-default" onclick="decrease('.$row.','.$col.','.$value["inventory"].','.$value["price"].')"  id = "btnDec'.$row.'"><b>-</b></button>
+                        <input class="text-center" type="text" value="' . $value['quantity'] . '" size="3" id="inputText'.$row.'" disabled>
+                        <button class="btn btn-default" onclick="increase('.$row.','.$col.','.$value["inventory"].','.$value["price"].')"  id = "btnInc'.$row.'"><b>+</b></button>
+                        </div>
+                    </td>
                     <td>' . number_format($temp) . ' VNĐ</td>
-                    <td><a href="cart.php?action=delete&id=' . $id . '">Remove</a></td>
+                    <td><label class="label label-danger"><a href="cart.php?action=delete&id=' . $id . '" style="color:white; text-decaration: none">Remove</a></label></td>
                 </tr>
                         ';
         $total += $temp;
+
+        $row++;
     }
-        echo '
+    echo '
 
                 </tbody>
             </table>
 
-            <div class="col-md-12"><span><h1>TỔNG TIỀN: '. number_format($total). ' VNĐ</h1></span></div>
+            <div class="col-md-4 col-md-offset-8"><span><h3>TỔNG TIỀN: <span id="totalMoney">' . number_format($total) . '</span> VNĐ</h3></span></div>
+        </div>
+
+        <div class="col-md-2">
+            <button  class="btn btn-primary"><a href="index.php"  style="color:white; text-decaration: none">Tiếp tục mua hàng</a></button>
+        </div>
+
+        <div class="1 col-md-offset-1">
+            <button class="btn btn-primary" onclick="checkout()">Thanh toán</button>
+        </div>
         </div>
     </div>
 </section>
 
 </body>
+<script>
+   username = \''.$_SESSION['username'].'\' ;
+   cart = '. json_encode($_SESSION['cart']) .';
+</script>
+
+<script src="../public/js/cart.js"></script>
 </html>';
 }
 
-function showBodyTable()
-{
-
-
-
-
-}
 
 ?>
 
@@ -124,9 +158,13 @@ function showMessage()
     echo '</head>
 
 <section>
-    <div class="container" style="margin-top: 50px;">
-        <h1>Ro hang rong</h1>
+    <div class="container" style="margin-top: 50px;color:orange">
+        <h1>Rỏ hàng rỗng</h1>
+        <div>
+       <button  class="btn btn-primary"><a href="index.php"  style="color:white; text-decaration: none">Quay lại</a></button>
     </div>
+    </div>
+    
 </section>
 
 </body>
@@ -134,5 +172,3 @@ function showMessage()
 }
 
 ?>
-
-

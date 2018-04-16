@@ -59,24 +59,9 @@
                                 </li>
                                 <li><a href="#location">Locate</a>
                                 </li>
-
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                                    <ul class="dropdown-menu">
-                                        <li><a href="#">Action</a>
-                                        </li>
-                                        <li><a href="#">Another action</a>
-                                        </li>
-                                        <li><a href="#">Something else here</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">Separated link</a>
-                                        </li>
-                                        <li class="divider"></li>
-                                        <li><a href="#">One more separated link</a>
-                                        </li>
-                                    </ul>
+                                <li><a href="cart.php">Cart</a>
                                 </li>
+
                             </ul>
                             <div id="top-right">
                                 <?php
@@ -101,7 +86,7 @@
                             <div class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                                 style="line-height: 50px;color: #777;text-decoration: none;">
-                                    Xin chào, '. $_SESSION['username'] .' <span class="caret"></span></a>
+                                    Xin chào, '. $_SESSION['name'] .' <span class="caret"></span></a>
                                 <ul class="dropdown-menu" >
                                     <li>  <a href="change_info.php" >Tài khoản</a></li>
                                   
@@ -122,7 +107,7 @@
                            <span style="padding-right: 20px;line-height: 50px;"><i class="fa fa-shopping-cart" style="font-size: 30px; color:orange;" ></i></span>
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                                 style="line-height: 50px;color: #777;text-decoration: none;font-size: 17px;">
-                                    Xin chào, '. $_SESSION['username'] .' <span class="caret"></span></a>
+                                    Xin chào, '. $_SESSION['name'] .' <span class="caret"></span></a>
                                 <ul class="dropdown-menu" >
                                     <li>  <a href="change_info.php" >Tài khoản</a></li>
                                     <li><a href="cart.php" >Giỏ hàng</a></li>
