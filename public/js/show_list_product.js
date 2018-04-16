@@ -49,8 +49,8 @@ function showListProducts(msg) {
             '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
             '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
             '<div class="info">' +
-            '   <a href="cart.php?action=add&id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'&inventory='+msg[i].inventory+'"  class="btn btn-default add-to-cart"><i' +
-            '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
+            '   <button class="btn btn-default add-to-cart" onclick="addProduct('+msg[i].id+', \''+msg[i].name+'\', '+msg[i].sell_price+', '+msg[i].inventory+')"  ><i' +
+            '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>' +
                 '</div>'+
             '</div>'+
             '</div>'+
@@ -61,6 +61,24 @@ function showListProducts(msg) {
     }
 
     document.getElementById('list-product').innerHTML = command;
+}
+
+function addProduct(id, name, price, inventory){
+ 
+  xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (ev) {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+         
+           if(this.responseText == 1){
+
+            
+                window.location = 'cart.php';
+           }
+           else alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ!');
+        }
+    };
+    xhttp.open("GET", "../controllers/cart-process.php?action=add&id="+id+"&name="+name+"&price="+price+"&inventory="+inventory);
+    xhttp.send();
 }
 
 function showPagination(numberPage,curPage) {

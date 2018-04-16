@@ -33,7 +33,7 @@ function increase(row, col,inven,price) {
             
         }
     };
-    xhttp.open("GET", "../controllers/adjust-quantity.php?action=increase&id="+  document.getElementById("tableCart").rows[row].cells[0].innerHTML );
+    xhttp.open("GET", "../controllers/cart-process.php?action=increase&id="+  document.getElementById("tableCart").rows[row].cells[0].innerHTML );
     xhttp.send();
 
     }
@@ -62,7 +62,7 @@ function decrease(row, col, intven,price) {
             
         }
     };
-    xhttp.open("GET", "../controllers/adjust-quantity.php?action=decrease&id="+  document.getElementById("tableCart").rows[row].cells[0].innerHTML );
+    xhttp.open("GET", "../controllers/cart-process.php?action=decrease&id="+  document.getElementById("tableCart").rows[row].cells[0].innerHTML );
     xhttp.send();
     }
     if(input.value != 1){

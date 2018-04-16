@@ -1,8 +1,6 @@
 <?php
-session_start();
-echo var_dump($_SESSION);
-unset($_SESSION['username']);
-unset($_SESSION['cart']);
-    session_destroy();
+	session_start();
+ 	session_destroy();
+    echo "<script>window.location = '../views/index.php';</script>";
 
 ?>

@@ -1,48 +1,6 @@
 <?php
 require 'header.php';
-
-if (isset($_GET['action'])) {
-
-    if (isset($_SESSION['username'])) {
-
-
-        if ($_GET['action'] == 'add') {
-            $id = $_GET['id'];
-            $name = $_GET['name'];
-            $price = $_GET['price'];
-            $inventory = $_GET['inventory'];
-
-            //Neu da co san pham nay trong gio hang, tang so luong len 1
-            if (isset($_SESSION['cart'][$id])) {
-                $_SESSION['cart'][$id]['quantity']++;
-            } else {
-                $_SESSION['cart'][$id] = array(
-                    "name" => $name,
-                    "quantity" => 1,
-                    "price" => $price,
-                    "inventory" => $inventory
-                );
-            }
-           /*   */
-          
-        } else if ($_GET['action'] == "delete") {
-            $id = $_GET['id'];
-            unset($_SESSION['cart'][$id]);
-      
-
-
-        } else {
-
-              echo "<html><script>alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ');</script></html>";
-           echo "<script>window.location = 'index.php'</script>";
-         
-        }
-
-    }
-}
-
-
-    if(isset($_SESSION['username'])){
+ if(isset($_SESSION['username'])){
         if (count($_SESSION['cart']) == 0) {
 
         showMessage();
@@ -51,7 +9,7 @@ if (isset($_GET['action'])) {
     }
     else {
 
-        echo "<html><script>alert('Bạn cần đăng nhập để thêm sản phẩm vào giỏ');</script></html>";
+        echo "<html><script>alert('Bạn cần đăng nhập để xem giỏ hàng');</script></html>";
         echo "<script>window.location = 'index.php'</script>";
     }
 ?>
@@ -112,7 +70,7 @@ function showTableCart()
                         </div>
                     </td>
                     <td>' . number_format($temp) . ' VNĐ</td>
-                    <td><label class="label label-danger"><a href="cart.php?action=delete&id=' . $id . '" style="color:white; text-decaration: none">Remove</a></label></td>
+                    <td><label class="label label-danger"><a href="../controllers/cart-process.php?action=delete&id=' . $id . '" style="color:white; text-decaration: none">Remove</a></label></td>
                 </tr>
                         ';
         $total += $temp;

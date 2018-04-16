@@ -92,7 +92,7 @@
                                   
                                      <li><a href="view_waiting.php" >Duyệt tài khoản</a></li>
                                       <li><a href="view_customers.php" >Danh sách KH</a></li>
-                                    <li><a href="#" >Thoát</a></li>
+                                    <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
                                 </ul>
                             </div>
 
@@ -112,7 +112,7 @@
                                     <li>  <a href="change_info.php" >Tài khoản</a></li>
                                     <li><a href="cart.php" >Giỏ hàng</a></li>
                                    
-                                    <li><a href="#" >Thoát</a></li>
+                                    <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
                                 </ul>
                             </div>
 
