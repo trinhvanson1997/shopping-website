@@ -15,17 +15,18 @@ function printBody(msg) {
     command = "";
 
     for (var i = 0; i < msg.length; i++) {
-        var total = parseFloat(msg[i].sell_price) * parseFloat(msg[i].amount);
+        var total =  (parseFloat(msg[i].sell_price) * parseFloat(msg[i].amount)).toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
+        var price = msg[i].sell_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
 
         command +=
             "<tr class='text-center'>" +
             "<td>" + (i+1)+ "</td>" +
             "<td>" + msg[i].name + "</td>" +
             "<td>" + msg[i].buy_date + "</td>" +
-            "<td>" + msg[i].sell_price + "</td>" +
+            "<td>" + price + "</td>" +
             "<td>" + msg[i].amount + "</td>" +
             "<td>" + total + "</td>" +
-            "<td>" + msg[i].status + "</td>";
+            "<td>" + msg[i].status + "</td></tr>";
 
 
     }

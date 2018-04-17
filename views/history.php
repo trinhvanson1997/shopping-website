@@ -22,7 +22,7 @@
                                 <th style="text-align: center;">Số lượng</th>
                                 <th style="text-align: center;">Tổng tiền</th>
                                 <th style="text-align: center;">Trạng Thái</th>
-                                <th></th>
+
                             </tr>
                             </thead>
                             <tbody id="table_body">

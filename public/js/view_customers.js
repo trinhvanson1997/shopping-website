@@ -24,7 +24,7 @@ function printBody(msg) {
             "<td>" + msg[i].address + "</td>" +
             "<td>" + msg[i].phone + "</td>" +
             "<td>" + msg[i].username + "</td>" +
-            "<td>" + msg[i].status + "</td>";
+            "<td>" + msg[i].status + "</td></tr>";
 
         if (msg[i].status == 'active') {
             //vì có cả thanh tiêu đề hàng 0 ta bắt đầu với hàng 1

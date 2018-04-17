@@ -31,33 +31,34 @@ function showListProducts(msg) {
     for(var i=0;i<msg.length-1;i++){
         price = msg[i].sell_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
 
-        command += '<div class="col-md-4">' +
+        command +=
+            '<div class="col-md-4">' +
             '        <div class="product-image-wrapper" id="product'+msg[i].id+'">' +
-            '                                <div class="single-products">' +
-            '                                    <div class="productinfo text-center">' +
-            '                                        <img src="../images/'+ msg[i].img +'" alt=""  />' +
-            '                                        <h2>'+price+'</h2>' +
-            '                                        <p title="'+msg[i].name+'">'+msg[i].name+'</p>' +
-            '                                        <a href="." class="btn btn-default add-to-cart" style="text-align: center"><i' +
-            '                                                    class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
+            '           <div class="single-products">' +
+            '               <div class="productinfo text-center">' +
+            '                   <img src="../images/'+ msg[i].img +'" alt=""  />' +
+            '                   <h2>'+price+'</h2>' +
+            '                   <p title="'+msg[i].name+'">'+msg[i].name+'</p>' +
+            '                   <a href="." class="btn btn-default add-to-cart" style="text-align: center"><i' +
+            '                    class="glyphicon glyphicon-shopping-cart"></i>Add to cart</a>' +
 
-            '<div class="overlay">' +
+            '                       <div class="overlay">' +
 
-            '   <div class="texttt"> <p> Tên: '+msg[i].name+'</p></div>' +
-            '   <div class="texttt"><p> NSX: '+msg[i].brand+'</p></div>' +
-            '   <div class="texttt"><p> Size: '+msg[i].size+'</p></div>' +
-            '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
-            '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
-            '<div class="info">' +
-            '   <button class="btn btn-default add-to-cart" onclick="addProduct('+msg[i].id+', \''+msg[i].name+'\', '+msg[i].sell_price+', '+msg[i].inventory+')"  ><i' +
-            '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>' +
-                '</div>'+
-            '</div>'+
-            '</div>'+
-            '</div>'+
+                                    '   <div class="texttt"> <p> Tên: '+msg[i].name+'</p></div>' +
+                                    '   <div class="texttt"><p> NSX: '+msg[i].brand+'</p></div>' +
+                                    '   <div class="texttt"><p> Size: '+msg[i].size+'</p></div>' +
+                                    '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
+                                    '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
+            '                           <div class="info">' +
+                                        '   <button class="btn btn-default add-to-cart" onclick="addProduct('+msg[i].id+', \''+msg[i].name+'\', '+msg[i].sell_price+', '+msg[i].inventory+')"  ><i' +
+                                        '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>' +
+                '                       </div>'+
+            '                        </div>'+
+            '                </div>'+
+            '            </div>'+
 
-            '          </div>' +
-            '         </div>   ';
+            '         </div>' +
+            '   </div>   ';
     }
 
     document.getElementById('list-product').innerHTML = command;

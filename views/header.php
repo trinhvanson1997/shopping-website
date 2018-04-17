@@ -40,7 +40,7 @@
     <div class="header_top" id="header-top">
         <div class="header-top" id="home">
             <div class="navbar navbar-default navbar-fixed-top">
-                <div class="container-fluid">
+                <div class="container">
                     <div class="navbar-header">
                         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
                             <span class="icon-bar"></span>
@@ -61,9 +61,9 @@
                                 </li>
                                 <li><a href="cart.php">Cart</a>
                                 </li>
-
                             </ul>
-                            <div id="top-right">
+
+
                                 <?php
                                 if(empty($_SESSION['username'])){
                                     echo '<form class="navbar-form navbar-right" role="search">
@@ -81,7 +81,7 @@
                                 }
                                 else{
                                    if($_SESSION['position'] == 'manager'){
-                                       echo '  <div class="nav navbar-right" style="margin-right: 10px;">
+                                       echo '  <div class="nav navbar-nav navbar-right">
 
                             <div class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
@@ -99,32 +99,30 @@
                         </div>';
                                    }
                                    else{
-                                       echo '  <div class="nav navbar-right">
-                             
-                                
-                             
-                            <div class="dropdown">
-                           <span style="padding-right: 20px;line-height: 50px;"><i class="fa fa-shopping-cart" style="font-size: 30px; color:orange;" ></i></span>
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                                style="line-height: 50px;color: #777;text-decoration: none;font-size: 17px;">
-                                    Xin chào, '. $_SESSION['name'] .' <span class="caret"></span></a>
-                                <ul class="dropdown-menu" >
-                                    <li>  <a href="change_info.php" >Tài khoản</a></li>
-                                    <li><a href="cart.php" >Giỏ hàng</a></li>
-                                    <li><a href="history.php" >Lịch sử</a></li>
-                                   
-                                    <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
-                                </ul>
-                            </div>
-
-                        </div>';
+                                       echo '  <div class="nav navbar-nav navbar-right">
+                                                    <div class="dropdown">
+                                           <span style="padding-right: 20px;line-height: 50px;"><i class="fa fa-shopping-cart" style="font-size: 30px; color:orange;" ></i></span>
+                                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
+                                                style="line-height: 50px;color: #777;text-decoration: none;font-size: 17px;">
+                                                    Xin chào, '. $_SESSION['name'] .' <span class="caret"></span></a>
+                                                <ul class="dropdown-menu" >
+                                                    <li>  <a href="change_info.php" >Tài khoản</a></li>
+                                                    <li><a href="cart.php" >Giỏ hàng</a></li>
+                                                    <li><a href="history.php" >Lịch sử</a></li>
+                                                   
+                                                    <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
+                                                </ul>
+                                            </div>
+                
+                                        </div>';
                                    }
                                 }
                                 ?>
 
 
 
-                            </div>
+
+
                     </center>
                 </div>
             </div>
