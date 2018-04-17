@@ -3,7 +3,7 @@
 
 
  <!-- CREATE BANNER SLIDESHOW -->
-    <div class="header-middle" id="banner" style="margin-top: 55px;">
+    <div class="header-mid" id="banner" style="margin-top: 55px;">
         <div class="container">
 
             <div id="myCarousel" class="carousel slide" data-ride="carousel" >
@@ -17,15 +17,15 @@
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
                     <div class="item active" >
-                        <img src="../images/img1.png" alt="Los Angeles" style="width:100%;height: 400px;">
+                        <img src="../images/img1.png"  >
                     </div>
 
                     <div class="item">
-                        <img src="../images/img2.png" alt="Chicago" style="width:100%;height: 400px;">
+                        <img src="../images/img2.png" >
                     </div>
 
                     <div class="item">
-                        <img src="../images/ny.jpg" alt="New york" style="width:100%;height: 400px;">
+                        <img src="../images/img3.png" >
                     </div>
                 </div>
 

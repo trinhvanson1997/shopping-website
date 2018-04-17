@@ -111,6 +111,7 @@
                                 <ul class="dropdown-menu" >
                                     <li>  <a href="change_info.php" >Tài khoản</a></li>
                                     <li><a href="cart.php" >Giỏ hàng</a></li>
+                                    <li><a href="history.php" >Lịch sử</a></li>
                                    
                                     <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
                                 </ul>
