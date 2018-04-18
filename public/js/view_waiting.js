@@ -16,7 +16,7 @@ function loadData() {
                     "<td>" + msg[i].address + "</td>" +
                     "<td>" + msg[i].phone + "</td>" +
                     "<td>" + msg[i].username + "</td>" +
-                    "<td>waiting</td></tr>" +
+                    "<td>waiting</td>" +
 
                     //vì có cả thanh tiêu đề hàng 0 ta bắt đầu với hàng 1
                     "<td><i class='fa fa-check' title='Chấp nhận' style='cursor: pointer;padding-right: 15px;font-size: 20px;color:green;' onclick='accept(" + (i + 1) + ",5)'></i>" +
