@@ -1,5 +1,5 @@
 <?php require 'index.php';
-require 'C:/xampp/htdocs/nhom15/shopping-website-master/controllers/get_all_products.php';
+require '../controllers/get_all_products.php';
 ?>
 /**
 * Created by PhpStorm.
@@ -32,6 +32,13 @@ require 'C:/xampp/htdocs/nhom15/shopping-website-master/controllers/get_all_prod
                 <th class="text-center">
                     Số lượng còn lại
                 </th>
+                <th class="text-center">
+                    Ngày nhập cuối
+                </th>
+                <th class="text-center">
+                    Thương hiệu
+                </th>
+
             </tr>
             </thead>
             <tbody id = "tableBody">

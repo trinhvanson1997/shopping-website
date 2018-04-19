@@ -1,0 +1,2 @@
+chuyển đổi tiền tệ
+    var price = msg[i].sell_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";

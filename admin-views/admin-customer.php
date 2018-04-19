@@ -5,28 +5,37 @@
  * Date: 16/04/2018
  * Time: 18:30
  */
-<div class="container" style="margin-top: 50px;">
-    <div class="col-md-12 text-left">
-        <h1 style="color: orange; font-size: 30px">
-            Khách hàng
-        </h1>
-    </div>
-    <div class="col-md-12">
-        <table class="table table-hover table-bordered text-center">
-            <thead>
-            <tr>
-                <th class="text-center">ID</th>
-                <th class="text-center">Tên khách hàng</th>
-                <th class="text-center">Ngày sinh</th>
-                <th class="text-center">Địa chỉ</th>
-                <th class="text-center">Số điện thoại</th>
-            </tr>
-            </thead>
+<div class="section" style="margin-top: 50px;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel panel-heading text-center">
+                        <h3>DANH SÁCH KHÁCH HÀNG</h3>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table table-bordered " id="table_waiting">
+                            <thead >
+                            <tr >
+                                <th style="text-align: center;">ID</th>
+                                <th style="text-align: center;">Họ Tên</th>
+                                <th style="text-align: center;">Ngày Sinh</th>
+                                <th style="text-align: center;">Địa Chỉ</th>
+                                <th style="text-align: center;">SĐT</th>
+                                <th style="text-align: center;">Tài Khoản</th>
+                                <th style="text-align: center;">Trạng Thái</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody id="table_body">
 
-            <tbody id="admin_customer">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-            </tbody>
-        </table>
     </div>
 </div>
 

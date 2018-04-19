@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body >
 
 <header>
 
@@ -57,10 +57,9 @@
 
                                 <li><a href="admin-product.php">Sản phẩm</a>
                                 </li>
-                                <li><a href="admin-order.php">Đơn hàng</a>
+                                <li><a href="admin-bill.php">Đơn hàng</a>
                                 </li>
-                                <li><a href="admin-bill.php">Hóa đơn</a>
-                                </li>
+
                                 <li><a href="admin-customer.php">Khách hàng</a>
                                 </li>
                                 <li>
@@ -88,7 +87,7 @@
                                 else{
                                     if($_SESSION['position'] == 'manager'){
                                         echo '  <div class="nav navbar-right" style="margin-right: 10px;">
-
+</div>
                             <div class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                                 style="line-height: 50px;color: #777;text-decoration: none;">

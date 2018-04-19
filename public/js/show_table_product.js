@@ -36,6 +36,9 @@ function show_table_product(msg) {
             '                    <td>' +
                                     +msg[i].inventory+   //số lượng.
             '                    </td>' +
+            '<td>'+msg[i].entry_date+'</td>'+
+            '<td>'+msg[i].brand+'</td>'+
+
             '                </tr>';
     }
 
