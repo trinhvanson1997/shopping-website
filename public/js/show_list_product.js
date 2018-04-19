@@ -1,30 +1,58 @@
+order = 'none';
+
 function loadData(page) {
 
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (ev) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             msg = JSON.parse(this.responseText);
-            
-            showListProducts(msg);
 
-            number = msg[msg.length-1].count ;
+            //do min(msg.length) = 1 , count(*)
+            if(msg.length >1) {
 
-            if(number % 9 == 0){
-                number /= 9;
+                showListProducts(msg);
+
+                number = msg[msg.length - 1].count;
+
+                if (number % 9 == 0) {
+                    number /= 9;
+                }
+                else {
+
+                    number = parseInt(Math.floor((number / 9))) + 1;
+
+
+                }
+                showPagination(number, page);
             }
             else{
-                number = Math.round((number / 9)) +1;
-
+                document.getElementById('list-product').innerHTML = "<p style='font-size: 20px;color: white;text-align: center'>Không tìm thấy sản phẩm nào</p>";
+                document.getElementById('pagination').innerHTML = "";
             }
-            showPagination(number,page);
         }
     };
-    xhttp.open("GET", "../controllers/get_all_products.php?page="+page);
+
+    if(order == 'none'){
+        xhttp.open("GET", "../controllers/get_all_products.php?page="+page);
+    }
+    else if(order == 'searchByName'){
+        var key = document.getElementById("searchBox").value;
+        xhttp.open('GET','../controllers/get-searched-products.php?action=search-by-name&page='+page+'&key='+key.toLowerCase());
+    }
+    else if(order == 'searchByPrice'){
+        var from = document.getElementById("from").value;
+        var to = document.getElementById("to").value;
+
+        xhttp.open('GET','../controllers/get-searched-products.php?action=search-by-price&page='+page+'&from='+from+'&to='+to);
+    }
+    else {
+        xhttp.open("GET", "../controllers/get-sorted-products.php?page="+page+"&order="+order);
+    }
     xhttp.send();
 }
 
 //trang bat dau la trang 1
-window.onload = loadData(1);
+window.onload = loadData(1, order);
 
 function showListProducts(msg) {
     command = "";
@@ -118,4 +146,36 @@ function prevPage(numberPage,curPage) {
     else{
 
     }
+}
+
+
+//lọc sản phẩm theo giá
+
+function arrangeByPrice(){
+
+    var rdAscend = document.getElementById("ascending");
+    var rdDescend = document.getElementById("descending");
+
+    if(rdAscend.checked){
+        order = 'ASC';
+       loadData(1);
+    }
+    if(rdDescend.checked){
+        order = 'DESC';
+        loadData(1);
+    }
+}
+
+//Tìm kiếm sản phẩm theo tên
+
+function searchProducts() {
+    order='searchByName';
+  loadData(1);
+
+}
+//Tìm kiếm sản phẩm trong khoảng giá
+
+function searchByPrice() {
+    order = 'searchByPrice';
+    loadData(1);
 }
