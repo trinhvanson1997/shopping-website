@@ -30,7 +30,7 @@ document.getElementById("btnChange").addEventListener('click', function () {
                 alert("Cập nhật thông tin thành công.");
 
             }
-            window.location = 'home2.php';
+            window.location = 'home.php';
         }
     };
     xhttp.open("POST", "../controllers/change_info_process.php");
@@ -40,7 +40,7 @@ return false;
 
 document.getElementById("btnCancel").addEventListener('click', function () {
     event.preventDefault();
-    window.location = 'home2.php';
+    window.location = 'home.php';
 });
 
 

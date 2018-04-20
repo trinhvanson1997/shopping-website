@@ -1,12 +1,8 @@
-<?php require 'index.php';
+<?php
+
+require "header1.php";
 require '../controllers/get_all_products.php';
 ?>
-/**
-* Created by PhpStorm.
-* User: MyPC
-* Date: 16/04/2018
-* Time: 18:27
-*/
 
 
 <div class="container" style="margin-top: 50px;">
@@ -52,4 +48,7 @@ require '../controllers/get_all_products.php';
     </div>
 
 </div>
+
 <script src="../public/js/show_table_product.js"></script>
+</body>
+</html>

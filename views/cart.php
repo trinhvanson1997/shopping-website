@@ -10,7 +10,7 @@ require 'header.php';
     else {
 
         echo "<html><script>alert('Bạn cần đăng nhập để xem giỏ hàng');</script></html>";
-        echo "<script>window.location = 'index.php'</script>";
+        echo "<script>window.location = 'index.php';</script>";
     }
 ?>
 
@@ -86,7 +86,7 @@ function showTableCart()
         </div>
 
         <div class="col-md-2">
-            <button  class="btn btn-primary"><a href="index.php"  style="color:white; text-decaration: none">Tiếp tục mua hàng</a></button>
+            <button  class="btn btn-primary"><a href="index.php" style="color:white; text-decaration: none">Tiếp tục mua hàng</a></button>
         </div>
 
         <div class="1 col-md-offset-1">
@@ -119,7 +119,7 @@ function showMessage()
     <div class="container" style="margin-top: 50px;color:orange">
         <h1>Rỏ hàng rỗng</h1>
         <div>
-       <button  class="btn btn-primary"><a href="index.php"  style="color:white; text-decaration: none">Quay lại</a></button>
+       <button  class="btn btn-primary"><a href="index.php" style="color:white; text-decaration: none">Quay lại</a></button>
     </div>
     </div>
     

@@ -78,8 +78,8 @@ function showListProducts(msg) {
                                     '   <div class="texttt"><p> Giá: '+price+'</p></div>' +
                                     '   <div class="texttt"><p> Còn : '+msg[i].inventory+' sản phẩm</p></div>' +
             '                           <div class="info">' +
-                                        '   <button class="btn btn-default add-to-cart" onclick="addProduct('+msg[i].id+', \''+msg[i].name+'\', '+msg[i].sell_price+', '+msg[i].inventory+')"  ><i' +
-                                        '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>' +
+            '   <button class="btn btn-default add-to-cart" onclick="addProduct('+msg[i].id+', \''+msg[i].name+'\', '+msg[i].sell_price+', '+msg[i].inventory+')"  ><i' +
+            '   class="glyphicon glyphicon-shopping-cart"></i>Add to cart</button>' +
                 '                       </div>'+
             '                        </div>'+
             '                </div>'+

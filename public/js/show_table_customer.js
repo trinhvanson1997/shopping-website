@@ -90,6 +90,7 @@ function unlock(i, j) {
 function delete_cus(i, j) {
     username = document.getElementById('table_waiting').rows[i].cells[j].innerHTML;
     //yêu cầu chấp nhận tài khoản với username ở hàng i cột j
+
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (ev) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -108,4 +109,18 @@ function delete_cus(i, j) {
 
     xhttp.open("GET", "../controllers/acc_customer_process.php?username=" + username + "&request=delete", true);
     xhttp.send();
+}
+
+function searchBill() {
+    var str = document.getElementById("order-search").value.toLowerCase();
+
+    var temp =[];
+    for(var i = 0; i<msg.length;i++){
+
+        if(msg[i].name.toLowerCase().includes(str)){
+            temp.push(msg[i]);
+        }
+    }
+
+    printBody(temp);
 }

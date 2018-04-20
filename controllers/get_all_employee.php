@@ -9,7 +9,9 @@ require 'DBConnect.php';
 
 if(isset($_REQUEST['page'])){
     $page = $_REQUEST['page'];
-    $sql = "SELECT * FROM employee LIMIT ". ($page - 1) * 9 . ", 9;";
+    $sql = "SELECT e.* FROM employee as e, account where e.username=account.username and 
+      status='active';
+  ";
     $rs = $conn->query($sql);
 
     $arr = [];
@@ -19,12 +21,7 @@ if(isset($_REQUEST['page'])){
 
     }
 
-    $sql = "SELECT count(*) FROM employee ;";
-    $rs = $conn->query($sql);
-    $row = $rs->fetch_assoc();
-
-    $arr1 = ['count'=> $row['count(*)']];
-    array_push($arr,$arr1);
+;
 
     $file = json_encode($arr);
     echo $file;

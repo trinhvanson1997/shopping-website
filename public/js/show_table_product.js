@@ -1,4 +1,4 @@
-function loadData(page) {
+function loadData() {
 
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (ev) {
@@ -8,10 +8,10 @@ function loadData(page) {
 
         }
     };
-    xhttp.open("GET", "../controllers/get_all_products.php?page="+page);
+    xhttp.open("GET", "../controllers/get-product-admin.php");
     xhttp.send();
 }
-window.onload = loadData(1);
+window.onload = loadData();
 
 
 

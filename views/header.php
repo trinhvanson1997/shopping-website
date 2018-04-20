@@ -25,6 +25,8 @@
     <link href="../bootstrap/css/responsive.css" rel="stylesheet">
     <link href="../bootstrap/css/pagination.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="../public/css/detail_product.css"></script>
+
 
 
     <style>

@@ -2,7 +2,7 @@ function loadData() {
     xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function (ev) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
-            var msg = JSON.parse(this.responseText);
+             msg = JSON.parse(this.responseText);
 
 
             showTableBills(msg);
@@ -117,3 +117,59 @@ a = JSON.parse(this.responseText);
 return a;
 }
 
+function show() {
+
+    var ddl = document.getElementById("order_status");
+    var selectedValue = ddl.options[ddl.selectedIndex].value;
+
+    if(selectedValue == 0){
+        var temp =[];
+            for(var i = 0; i<msg.length;i++){
+                if(msg[i].status == "processing"){
+                    temp.push(msg[i])   ;
+                }
+            }
+            showTableBills(temp);
+    }
+    else if(selectedValue == 1){
+        var temp =[];
+        for(var i = 0; i<msg.length;i++){
+            if(msg[i].status == "done"){
+                temp.push(msg[i]);
+            }
+        }
+        showTableBills(temp);
+    }
+    else{
+        showTableBills(msg);
+    }
+    /* else if(selectedValue == 2){
+
+     }*/
+}
+
+
+function searchBill() {
+    var str = document.getElementById("order-search").value;
+
+    var temp =[];
+    for(var i = 0; i<msg.length;i++){
+        if(msg[i].id.startsWith(str)){
+            temp.push(msg[i]);
+        }
+    }
+    showTableBills(temp);
+}
+
+function searchByDate() {
+    var date1 = document.getElementById("search-date-from").value;
+    var date2 = document.getElementById("search-date-to").value;
+
+    var temp =[];
+    for(var i = 0; i<msg.length;i++){
+        if(msg[i].buy_date > date1 && msg[i].buy_date <date2){
+            temp.push(msg[i]);
+        }
+    }
+    showTableBills(temp);
+}

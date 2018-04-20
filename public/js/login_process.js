@@ -18,7 +18,24 @@ function checkLogin() {
         xhttp.onreadystatechange = function (ev) {
             if(this.readyState == 4 && this.status == 200){
                 var msg = JSON.parse(this.responseText);
-alert(this.responseText);
+                if(msg.res == "correct"){
+                    if(msg.status == "active"){
+                        alert("Bạn đã đăng nhập thành công");
+                        if(msg.position=='manager'){
+                            window.location = "../admin-views/home.php";
+                        }
+                        else{
+                            window.location = "../admin-views/home2.php";
+                        }
+                    }
+                    if(msg.status=='locked'){
+                        alert('Tài khoản đã bị khóa');
+                    }
+
+                }
+                else if(msg.res == "incorrect"){
+                    alert("Thông tin tài khoản hoặc mật khẩu không chính xác!");
+                }
 
             }
         };
