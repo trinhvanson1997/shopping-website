@@ -24,26 +24,24 @@ if ($result->num_rows > 0) {
 
     $_SESSION['position'] = $row['position'];
 
-    $_SESSION['cart'] =Array();
-    
+
     $position = $row['position'];
     $status = $row['status'];
 
-    $sql = "SELECT * FROM customer WHERE username = '" . $username . "' ;";
+    $sql = "SELECT * FROM employee WHERE username = '" . $username . "' ;";
     $result = $conn->query($sql);
 
-    if($result->num_rows > 0) {
+    if ($result->num_rows > 0) {
         $row = $result->fetch_assoc();
 
         $_SESSION['id'] = $row['id'];
         $_SESSION['name'] = $row['name'];
-        $_SESSION['username'] = $row['username'];
+        $_SESSION['username'] = $username;
 
         $arr = array("username" => $_SESSION['username'], "name" => $_SESSION['name'], "res" => "correct", "position" => $position, "status" => $status);
         $file = json_encode($arr);
         echo $file;
-    }
-    else{
+    } else {
         $arr = array("res" => "incorrect");
         $file = json_encode($arr);
         echo $file;

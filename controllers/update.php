@@ -25,7 +25,7 @@
 
 if ($_REQUEST['request'] == "delete") {
        $username = $_REQUEST['username'];
-    $sql1 = "UPDATE account SET status='deleted' WHERE username = '$username';";
+    $sql1 = "UPDATE account SET status='locked' WHERE username = '$username';";
 
 
     if ($conn->query($sql1)) {

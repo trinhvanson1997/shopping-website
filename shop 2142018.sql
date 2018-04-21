@@ -3,10 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 19, 2018 lúc 11:55 AM
+-- Thời gian đã tạo: Th4 21, 2018 lúc 02:47 PM
 -- Phiên bản máy phục vụ: 10.1.30-MariaDB
 -- Phiên bản PHP: 7.2.2
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -41,13 +40,14 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `position`, `status`) VALUES
-('duy', 'duy', 'customer', 'locked'),
+('aaaaa', 'aa', 'customer', 'active'),
+('duy', 'duy', 'customer', 'active'),
 ('hien', 'hien', 'customer', 'active'),
+('hienmap', '123', 'employee', 'active'),
 ('nam', 'nam', 'customer', 'deny'),
-('qqqq', 'aaaa', 'customer', 'deny'),
-('son', 'son', 'manager', 'locked'),
-('van', 'van', 'customer', 'waiting'),
-('vananh', 'vananh', 'customer', 'locked');
+('qq', 'q', 'employee', 'locked'),
+('son', 'son', 'manager', 'active'),
+('van', 'van', 'customer', 'waiting');
 
 -- --------------------------------------------------------
 
@@ -82,7 +82,9 @@ INSERT INTO `bill` (`id`, `emp_id`, `cus_id`, `total`, `buy_date`, `process_date
 (23, 1, 2, 4155000, '2018-04-16 18:09:58', NULL, 'processing'),
 (24, 1, 2, 1000000, '2018-04-16 19:32:39', NULL, 'processing'),
 (25, 1, 2, 780000, '2018-04-16 20:12:42', NULL, 'processing'),
-(26, 1, 3, 4780000, '2018-04-17 14:24:52', NULL, 'processing');
+(26, 1, 3, 4780000, '2018-04-17 14:24:52', NULL, 'processing'),
+(27, 1, 2, 1000000, '2018-04-20 23:15:04', NULL, 'processing'),
+(28, 1, 2, 1000000, '2018-04-21 19:46:53', NULL, 'processing');
 
 -- --------------------------------------------------------
 
@@ -124,7 +126,9 @@ INSERT INTO `bill_detail` (`bill_id`, `product_id`, `amount`) VALUES
 (24, 1, 1),
 (25, 2, 1),
 (26, 1, 4),
-(26, 2, 1);
+(26, 2, 1),
+(27, 1, 1),
+(28, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -146,12 +150,9 @@ CREATE TABLE `customer` (
 --
 
 INSERT INTO `customer` (`id`, `name`, `birthday`, `address`, `phone`, `username`) VALUES
-(1, 'Sơn Trịnh Van', '1997-09-01', 'vĩnh phúc', '012', 'son'),
 (2, 'hiền lê', '1997-05-15', 'tam phúc vĩnh tường ', '0123456', 'hien'),
 (3, 'nguyễn ngọc duy', '1994-01-01', 'vĩnh tường', '01698899987', 'duy'),
-(4, 'a', '2018-03-29', 'a', '', 'qqqq'),
 (9, 'trinh', '2018-03-30', 'a', '222', 'nam'),
-(10, 'nam', '2018-03-30', 'a', '2', 'vananh'),
 (11, 'trinh thi van anh', '1995-03-12', 'thon an lao', '664101', 'van');
 
 -- --------------------------------------------------------
@@ -175,7 +176,10 @@ CREATE TABLE `employee` (
 --
 
 INSERT INTO `employee` (`id`, `name`, `birthday`, `address`, `phone`, `salary`, `username`) VALUES
-(1, 'trinh van son', '1997-09-01', 'vinh thinh-vinh tuong', '0982747570', 0, 'son');
+(1, 'trinh van son', '1997-09-01', 'vinh thinh-vinh tuong', '0982747570', 0, 'son'),
+(2, 'le thi thu hien', '2018-04-13', 'tam phuc', '09783', 1000000, 'hienmap'),
+(3, 'a', '2018-04-23', 'a', '1211', 111, 'qq'),
+(4, 'aa', '2018-01-20', 'aa', '11111', 11111, 'aaaaa');
 
 -- --------------------------------------------------------
 
@@ -201,7 +205,7 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `type_id`, `inventory`, `buy_price`, `sell_price`, `entry_date`, `brand`, `size`, `img`) VALUES
-(1, 'Quần và váy nữ sieu xinh dep va thooai mai', 'QNU', 4, 50000, 1000000, '2018-01-01 00:00:00', 'viettien', 'M', 'product1.jpg'),
+(1, 'Quần và váy nữ sieu xinh dep va thooai mai', 'QNU', 2, 50000, 1000000, '2018-01-01 00:00:00', 'viettien', 'M', 'product1.jpg'),
 (2, 'Váy trắng 2 dây', 'ANU', 3, 500000, 780000, '2018-01-04 00:00:00', 'viettien', 'M S', 'product2.jpg'),
 (3, 'Váy xám ngắn', 'ANU', 94, 120000, 555000, '2017-01-04 00:00:00', 'adidas', 'S', 'product3.jpg'),
 (4, 'Combo váy và mũ', 'ANU', 15, 500000, 780000, '2018-01-04 00:00:00', 'viettien', 'L', 'product4.jpg'),
@@ -295,7 +299,7 @@ ALTER TABLE `product_type`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT cho bảng `customer`
@@ -307,7 +311,7 @@ ALTER TABLE `customer`
 -- AUTO_INCREMENT cho bảng `employee`
 --
 ALTER TABLE `employee`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT cho bảng `product`

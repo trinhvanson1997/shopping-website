@@ -18,6 +18,9 @@ function checkLogin() {
         xhttp.onreadystatechange = function (ev) {
             if(this.readyState == 4 && this.status == 200){
                 var msg = JSON.parse(this.responseText);
+                if(msg.status == 'locked'){
+                    alert("Tài khoản đã bị khóa");
+                }
                 if(msg.res == "correct"){
                     if(msg.status == "active"){
                         alert("Bạn đã đăng nhập thành công");
@@ -39,7 +42,7 @@ function checkLogin() {
 
             }
         };
-        xhttp.open("GET", "../controllers/login_process.php?username="+username+"&password="+password);
+        xhttp.open("GET", "../controllers/login-process-admin.php?username="+username+"&password="+password);
         xhttp.send();
     }
     return false;
