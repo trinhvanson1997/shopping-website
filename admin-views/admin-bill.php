@@ -1,7 +1,7 @@
 <?php
 
 
-    require "header1.php";
+require "header1.php";
 
 ?>
 
@@ -14,7 +14,8 @@
     </div>
 
     <div class="form-group col-md-3 padd-0">
-<input type="text" class="form-control" id="order-search" placeholder="Nhập mã đơn hàng để tìm kiếm" onkeyup="searchBill()" ">
+        <input type="text" class="form-control" id="order-search" placeholder="Nhập mã đơn hàng để tìm kiếm"
+               onkeyup="searchBill()" ">
 
     </div>
 
@@ -23,18 +24,21 @@
 
             <div class="col-md-6 padd-0" style="padding-left: 6px;">
                 <div class="input-daterange input-group" id="datepicker">
-                    <input type="date" class="input-sm form-control" id="search-date-from" placeholder="Từ ngày" name="start">
+                    <input type="date" class="input-sm form-control" id="search-date-from" placeholder="Từ ngày"
+                           name="start">
                     <span class="input-group-addon">to</span>
-                    <input type="date" class="input-sm form-control" id="search-date-to" placeholder="Đến ngày" name="end">
+                    <input type="date" class="input-sm form-control" id="search-date-to" placeholder="Đến ngày"
+                           name="end">
                 </div>
             </div>
             <div class="col-md-3 padd-0" style="padding-left: 5px;">
-                <button style="box-shadow: none;margin-top: 0px" type="button" class="btn btn-primary btn-large" onclick="searchByDate()"><i class="fa fa-search"></i> Tìm kiếm
+                <button style="box-shadow: none;margin-top: 0px" type="button" class="btn btn-primary btn-large"
+                        onclick="searchByDate()"><i class="fa fa-search"></i> Tìm kiếm
                 </button>
 
             </div>
-            </div>
         </div>
+    </div>
     <div class="col-md-12">
         <table class="table table-hover table-bordered text-center">
             <thead>
@@ -50,7 +54,7 @@
                         <option selected value="-1"><b>Trạng thái</b></option>
                         <option value="0"><b>processing</b></option>
                         <option value="1"><b>done</b></option>
-                       <option value="2"><b>destroy</b></option>
+                        <option value="2"><b>destroy</b></option>
                     </select>
                 </th>
 
@@ -58,8 +62,6 @@
             </tr>
             </thead>
             <tbody id="table_body">
-
-
 
 
             </tbody>

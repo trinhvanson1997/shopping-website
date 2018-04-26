@@ -13,14 +13,14 @@ $page = $_REQUEST['page'];
 if ($cmd == 'search-by-name') {
     $key = $_REQUEST['key'];
 
-    $sql = "SELECT * FROM product WHERE lower(name) LIKE '%" . $key . "%' LIMIT " . ($page - 1) * 9 . ", 9;";
+    $sql = "SELECT * FROM product WHERE lower(name) LIKE '%" . $key . "%' AND inventory>0 LIMIT " . ($page - 1) * 12 . ", 12;";
 
 
 } else {
         $from =$_REQUEST['from'];
         $to =$_REQUEST['to'];
 
-    $sql = "SELECT * FROM product WHERE sell_price > $from AND sell_price < $to LIMIT " . ($page - 1) * 9 . ", 9;";
+    $sql = "SELECT * FROM product WHERE sell_price > $from AND sell_price < $to AND inventory>0 LIMIT " . ($page - 1) * 12 . ", 12;";
 }
 $rs = $conn->query($sql);
 
@@ -32,10 +32,10 @@ while (($row = $rs->fetch_assoc()) != null) {
 }
 
 if($cmd == 'search-by-name'){
-$sql = "SELECT count(*) FROM product  WHERE lower(name) LIKE '%" . $key . "%';";
+$sql = "SELECT count(*) FROM product  WHERE lower(name) LIKE '%" . $key . "%' AND inventory>0;";
 }
 else{
-    $sql = "SELECT count(*) FROM product  WHERE sell_price > $from AND sell_price < $to;";
+    $sql = "SELECT count(*) FROM product  WHERE sell_price > $from AND sell_price < $to AND inventory>0;";
 }
 $rs = $conn->query($sql);
 $row = $rs->fetch_assoc();

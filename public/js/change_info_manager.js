@@ -62,6 +62,6 @@ x.onreadystatechange = function () {
 };
 var str = tfuser.value;
 
-x.open('GET', '../controllers/getInfoByUsername.php?username=' + str, true);
+x.open('GET', '../controllers/getInfoAdmin.php?username=' + str, true);
 x.send();
 

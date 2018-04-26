@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Máy chủ: 127.0.0.1
--- Thời gian đã tạo: Th4 21, 2018 lúc 02:47 PM
+-- Thời gian đã tạo: Th4 26, 2018 lúc 05:18 PM
 -- Phiên bản máy phục vụ: 10.1.30-MariaDB
 -- Phiên bản PHP: 7.2.2
 
@@ -40,14 +40,15 @@ CREATE TABLE `account` (
 --
 
 INSERT INTO `account` (`username`, `password`, `position`, `status`) VALUES
-('aaaaa', 'aa', 'customer', 'active'),
+('aaaaa', 'aa', 'customer', 'locked'),
 ('duy', 'duy', 'customer', 'active'),
 ('hien', 'hien', 'customer', 'active'),
 ('hienmap', '123', 'employee', 'active'),
 ('nam', 'nam', 'customer', 'deny'),
 ('qq', 'q', 'employee', 'locked'),
 ('son', 'son', 'manager', 'active'),
-('van', 'van', 'customer', 'waiting');
+('van', 'van', 'customer', 'waiting'),
+('vananh', 'vananh', 'customer', 'active');
 
 -- --------------------------------------------------------
 
@@ -84,7 +85,8 @@ INSERT INTO `bill` (`id`, `emp_id`, `cus_id`, `total`, `buy_date`, `process_date
 (25, 1, 2, 780000, '2018-04-16 20:12:42', NULL, 'processing'),
 (26, 1, 3, 4780000, '2018-04-17 14:24:52', NULL, 'processing'),
 (27, 1, 2, 1000000, '2018-04-20 23:15:04', NULL, 'processing'),
-(28, 1, 2, 1000000, '2018-04-21 19:46:53', NULL, 'processing');
+(28, 1, 2, 1000000, '2018-04-21 19:46:53', NULL, 'processing'),
+(29, 1, 2, 2000000, '2018-04-26 20:29:24', NULL, 'processing');
 
 -- --------------------------------------------------------
 
@@ -128,7 +130,8 @@ INSERT INTO `bill_detail` (`bill_id`, `product_id`, `amount`) VALUES
 (26, 1, 4),
 (26, 2, 1),
 (27, 1, 1),
-(28, 1, 1);
+(28, 1, 1),
+(29, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -153,7 +156,8 @@ INSERT INTO `customer` (`id`, `name`, `birthday`, `address`, `phone`, `username`
 (2, 'hiền lê', '1997-05-15', 'tam phúc vĩnh tường ', '0123456', 'hien'),
 (3, 'nguyễn ngọc duy', '1994-01-01', 'vĩnh tường', '01698899987', 'duy'),
 (9, 'trinh', '2018-03-30', 'a', '222', 'nam'),
-(11, 'trinh thi van anh', '1995-03-12', 'thon an lao', '664101', 'van');
+(11, 'trinh thi van anh', '1995-03-12', 'thon an lao', '664101', 'van'),
+(12, 'Trinh Van ANh', '1995-05-15', 'vinh thinh vinh tuong vinh phuc', '097121265', 'vananh');
 
 -- --------------------------------------------------------
 
@@ -205,18 +209,26 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`id`, `name`, `type_id`, `inventory`, `buy_price`, `sell_price`, `entry_date`, `brand`, `size`, `img`) VALUES
-(1, 'Quần và váy nữ sieu xinh dep va thooai mai', 'QNU', 2, 50000, 1000000, '2018-01-01 00:00:00', 'viettien', 'M', 'product1.jpg'),
+(1, 'Quần và váy nữ sieu xinh dep va thooai mai', 'QNU', 100, 50000, 1000000, '2018-01-01 00:00:00', 'viettien', 'M', 'product1.jpg'),
 (2, 'Váy trắng 2 dây', 'ANU', 3, 500000, 780000, '2018-01-04 00:00:00', 'viettien', 'M S', 'product2.jpg'),
 (3, 'Váy xám ngắn', 'ANU', 94, 120000, 555000, '2017-01-04 00:00:00', 'adidas', 'S', 'product3.jpg'),
-(4, 'Combo váy và mũ', 'ANU', 15, 500000, 780000, '2018-01-04 00:00:00', 'viettien', 'L', 'product4.jpg'),
-(5, 'Áo sơ mi trắng ', 'ANU', 14, 250000, 400000, '2018-01-10 00:00:00', 'owen', 'XL', 'product5.jpg'),
+(4, 'Áo sơ mi trắng', 'ANU', 15, 500000, 780000, '2018-01-04 00:00:00', 'viettien', 'L', 'product4.jpg'),
+(5, 'Áo công sở', 'ANU', 14, 250000, 400000, '2018-01-10 00:00:00', 'owen', 'XL', 'product5.jpg'),
 (6, 'Áo thun Đài Loan', 'ANU', 10, 120000, 500000, '2018-03-28 00:00:00', 'PhongFashion', 'S M L', 'product6.jpg'),
 (7, 'Kimono Tua Dua', 'ANU', 10, 120000, 400000, '2018-03-28 00:00:00', 'DaiLoan', 'L', 'product7.jpg'),
 (8, 'Áo khoác ren', 'ANU', 5, 120000, 710000, '2018-03-28 00:00:00', 'AnhKhoi', 'S', 'product8.jpg'),
 (9, 'Áo so mi nu', 'ANU', 15, 120000, 505000, '2018-03-29 00:00:00', 'Owen', 'M', 'product9.jpg'),
 (10, 'Áo quý tộc đen', 'ANU', 17, 220000, 650000, '2018-03-29 00:00:00', 'AIII', 'M', 'product10.jpg'),
 (11, 'Áo len trắng', 'ANU', 27, 120000, 310000, '2018-03-29 00:00:00', 'iZZ', 'S L', 'product11.jpg'),
-(12, 'Combo váy thời trang', 'ANU', 17, 220000, 750000, '2018-03-29 00:00:00', 'EST', 'M L', 'product12.jpg');
+(12, 'Combo váy thời trang', 'ANU', 17, 220000, 750000, '2018-03-29 00:00:00', 'EST', 'M L', 'product12.jpg'),
+(13, 'Áo da cam', 'ANU', 77, 100000, 200000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product13.jpg'),
+(14, 'Áo kiểu tay bo', 'ANU', 77, 100000, 400000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product14.jpg'),
+(15, 'Sơ mi nam trơn 2018', 'ANA', 70, 100000, 400000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product15.jpg'),
+(16, 'Áo sơ mi nam họa tiết HQ', 'ANA', 77, 100000, 400000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product16.jpg'),
+(17, 'Quần viền sọc', 'QNU', 77, 100000, 300000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product18.jpg'),
+(18, 'Quần ống rộng', 'QNU', 12, 100000, 400000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product17.jpg'),
+(19, 'Quần short jean nam đơn giản', 'QNA', 77, 100000, 400000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product19.jpg'),
+(20, 'Quần Kaki trắng', 'QNA', 77, 100000, 500000, '0000-00-00 00:00:00', 'unknown', 'M L', 'product20.jpg');
 
 -- --------------------------------------------------------
 
@@ -299,13 +311,13 @@ ALTER TABLE `product_type`
 -- AUTO_INCREMENT cho bảng `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT cho bảng `customer`
 --
 ALTER TABLE `customer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT cho bảng `employee`
@@ -317,7 +329,7 @@ ALTER TABLE `employee`
 -- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Các ràng buộc cho các bảng đã đổ

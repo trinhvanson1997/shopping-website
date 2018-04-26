@@ -25,7 +25,7 @@
     <link href="../bootstrap/css/responsive.css" rel="stylesheet">
     <link href="../bootstrap/css/pagination.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="../public/css/detail_product.css"></script>
+    <link rel="stylesheet" href="../public/css/detail_product.css">
 
 
 
@@ -35,7 +35,7 @@
 
 </head>
 
-<body style="background: url("../images/chicago.jpg")">
+<body>
 
 <header>
 
@@ -57,12 +57,11 @@
                                 <li class="active"><a href="index.php">HOME</a>
                                 </li>
 
-                                <li><a href="#products">Products</a>
+                                <li><a href="index.php#products">Products</a>
                                 </li>
-                                <li><a href="#location">Locate</a>
+                                <li><a href="index.php#location">Locate</a>
                                 </li>
-                                <li><a href="cart.php">Cart</a>
-                                </li>
+
                             </ul>
 
 
@@ -83,36 +82,19 @@
                                 </form>
                             </div>';
                                 }
-                                else{
-                                   if($_SESSION['position'] == 'manager'){
-                                       echo '  <div class="nav navbar-nav navbar-right">
 
-                            <div class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
-                                style="line-height: 50px;color: #777;text-decoration: none;">
-                                    Xin chào, '. $_SESSION['name'] .' <span class="caret"></span></a>
-                                <ul class="dropdown-menu" >
-                                    <li>  <a href="change_info.php" >Tài khoản</a></li>
-                                  
-                                     <li><a href="view_waiting.php" >Duyệt tài khoản</a></li>
-                                      <li><a href="view_customers.php" >Danh sách KH</a></li>
-                                    <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
-                                </ul>
-                            </div>
-
-                        </div>';
-                                   }
                                    else{
                                        echo '  <div class="nav navbar-nav navbar-right">
                                                     <div class="dropdown">
-                                           <span style="padding-right: 20px;line-height: 50px;"><i class="fa fa-shopping-cart" style="font-size: 30px; color:orange;" ></i></span>
+                                                    <a href="cart.php" style="padding-right: 20px;" title="Xem giỏ hàng"><span><i class="fa fa-shopping-cart" style="font-size: 30px; color:orange;" ></i></span></a>
+                                           
                                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" 
                                                 style="line-height: 50px;color: #777;text-decoration: none;font-size: 17px;">
                                                     Xin chào, '. $_SESSION['name'] .' <span class="caret"></span></a>
                                                 <ul class="dropdown-menu" >
                                                     <li>  <a href="change_info.php" >Tài khoản</a></li>
-                                                    <li><a href="cart.php" >Giỏ hàng</a></li>
-                                                    <li><a href="history.php" >Lịch sử</a></li>
+                                                  
+                                                    <li><a href="history.php" >Lịch sử </a></li>
                                                    
                                                     <li><a href="../controllers/logout.php" >Đăng xuất</a></li>
                                                 </ul>
@@ -120,7 +102,7 @@
                 
                                         </div>';
                                    }
-                                }
+
                                 ?>
 
 

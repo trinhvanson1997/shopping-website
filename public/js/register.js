@@ -85,7 +85,7 @@ function register(){
                 }
                 else if (msg == 'success') {
                     alert("Đăng ký thành công");
-                    window.location = "home2.php";
+                    window.location = "index.php";
                 }
             }
         };
@@ -98,7 +98,7 @@ return false;
 
   function cancel(){
     event.preventDefault();
-    window.location = 'home2.php';
+    window.location = 'index.php';
 }
 
 

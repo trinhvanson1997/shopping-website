@@ -1,15 +1,9 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sontrinh
- * Date: 27/03/2018
- * Time: 16:08 PM
- */
 require 'DBConnect.php';
+    $page = $_GET['page'];
+    $type = $_GET['type'];
 
-if(isset($_REQUEST['page'])){
-    $page = $_REQUEST['page'];
-    $sql = "SELECT * FROM product WHERE inventory > 0 LIMIT ". ($page - 1) * 12 . ", 12;";
+    $sql = "SELECT * FROM product WHERE inventory > 0 AND type_id = '". $type ."' LIMIT ". ($page - 1) * 12 . ", 12;";
     $rs = $conn->query($sql);
 
     $arr = [];
@@ -19,7 +13,7 @@ if(isset($_REQUEST['page'])){
 
     }
 
-    $sql = "SELECT count(*) FROM product ;";
+    $sql = "SELECT count(*) FROM product WHERE  inventory>0 AND type_id = '". $type ."';";
     $rs = $conn->query($sql);
     $row = $rs->fetch_assoc();
 
@@ -28,6 +22,4 @@ if(isset($_REQUEST['page'])){
 
     $file = json_encode($arr);
     echo $file;
-}
-
 ?>

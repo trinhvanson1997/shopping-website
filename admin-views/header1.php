@@ -64,6 +64,9 @@
                                 <li>
                                     <a href="admin-employee.php">Nhân viên</a>
                                 </li>
+                                <li>
+                                    <a href="admin-waiting.php">Duyệt đăng ký</a>
+                                </li>
 
 
                             </ul>

@@ -11,7 +11,7 @@ if(isset($_REQUEST['page']) && isset($_REQUEST['order'])){
     $page = $_REQUEST['page'];
     $order = $_REQUEST['order'];
 
-    $sql = "SELECT * FROM product  ORDER BY sell_price $order LIMIT ". ($page - 1) * 9 . ", 9;";
+    $sql = "SELECT * FROM product  WHERE inventory>0 ORDER BY sell_price $order LIMIT ". ($page - 1) * 12 . ", 12;";
     $rs = $conn->query($sql);
 
     $arr = [];
@@ -21,7 +21,7 @@ if(isset($_REQUEST['page']) && isset($_REQUEST['order'])){
 
     }
 
-    $sql = "SELECT count(*) FROM product ;";
+    $sql = "SELECT count(*) FROM product WHERE  inventory>0 ;";
     $rs = $conn->query($sql);
     $row = $rs->fetch_assoc();
 
