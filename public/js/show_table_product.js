@@ -20,6 +20,9 @@ function show_table_product(msg) {
     command = "";
     for (var i = 0;i < msg.length - 1;i++) {
 
+         buy = msg[i].sell_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
+         sell = msg[i].buy_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
+
         command += '  <tr>' +
             '                    <td>' +
                                    + msg[i].id   +   //ID
@@ -28,10 +31,10 @@ function show_table_product(msg) {
                                     msg[i].name.toString()+  // Tên
             '                    </td>' +
             '                    <td>' +
-                                    +msg[i].sell_price+    //Giá
+                                    sell  + //Giá
             '                    </td>' +
             '                   <td>' +
-                                    +msg[i].buy_price+
+                                    buy+
             '                   </td>'+
             '                    <td>' +
                                     +msg[i].inventory+   //số lượng.

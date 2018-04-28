@@ -6,6 +6,7 @@ require "header1.php";
 ?>
 
 
+
 <div class="container" style="margin-top: 50px;">
     <div class="col-md-12 text-left">
         <h1 style="color: orange; font-size: 30px">
@@ -40,7 +41,7 @@ require "header1.php";
         </div>
     </div>
     <div class="col-md-12">
-        <table class="table table-hover table-bordered text-center">
+        <table class="table table-hover table-bordered text-center" id="table-bills">
             <thead>
             <tr>
                 <th>Mã đơn hàng</th>
@@ -57,6 +58,7 @@ require "header1.php";
                         <option value="2"><b>destroy</b></option>
                     </select>
                 </th>
+                <th></th>
 
                 <th></th>
             </tr>

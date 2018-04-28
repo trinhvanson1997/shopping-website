@@ -15,13 +15,15 @@ window.onload = loadData(1);
 function showTableEmm(msg) {
     command = "";
     for(var i = 0;i < msg.length; i++){
+        salary =  msg[i].salary.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
+
         command += '<tr>' +
                   
             '                    <td>'+msg[i].id+'</td>' +
             '                    <td>'+msg[i].name +'</td>' +
             '                    <td>'+msg[i].birthday+'</td>' +
             '                    <td>'+msg[i].phone+'</td>' +
-            '                    <td>'+ msg[i].salary+'</td>' +
+            '                    <td>'+salary+'</td>' +
             '<td ><i class="fa fa-edit blue" title="sua" style="cursor: pointer;padding-right: 10px; font-size: 20px;" onclick="showmodal('+i+')"></i><span> \ </span> <i class="fa fa-trash-o" title="xóa" style="cursor: pointer;font-size: 20px;" onclick="del('+i+')"></i></td>' +
                 '</tr>';
     }
@@ -81,10 +83,10 @@ function update(){
                 var msg = this.responseText;
 
                 if (msg == "update ko thanh cong") {
-                    alert("Update ko thanh cong");
+                    alert("Cập nhật thất bại");
                 }
                 else if (msg == 'success') {
-                    alert("Đăng ký thành công");
+                    alert("Cập nhật thành công");
                     window.location = 'admin-employee.php';
                 }
             }

@@ -19,25 +19,35 @@ function showTableBills(msg) {
 
     for(var i = 0;i < msg.length ; i++){
         var detail = getBillDetail(msg[i].id);
-
+    total = msg[i].total.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
         var body_detail = printBodyBillDetail(detail);
 
         command += '<tr>' +
             '                <td>'+ msg[i].id +'</td>' +
             '                <td>'+ msg[i].emp_id + '</td>' +
             '                <td>'+msg[i].cus_id+'</td>' +
-            '                <td>'+msg[i].total+'</td>' +
+            '                <td>'+total+'</td>' +
             '                <td>'+msg[i].buy_date+'</td> ' +
             '                <td>'+msg[i].process_date+'</td> ' +
             '                <td>'+msg[i].status+'</td> ' +
             '                <td> ' +
             '                    <button class="btn btn-info" data-toggle="collapse" data-target="#demo'+i+'">Xem chi tiết <i ' +
             '                                class="caret"></i></button> ' +
-            '                </td> ' +
+            '                </td> ';
+
+            if(msg[i].status == 'processing'){
+                command +=    '<td> <i class="fa fa-check-square" onclick="processBill('+msg[i].id+')" title="Xử lý đơn" style="cursor: pointer;padding-right: 15px;font-size: 20px;color:green;"></i> ' +
+                   ' <i class="fa fa-ban" onclick="destroyBill('+msg[i].id+')" title="Hủy đơn hàng" style="cursor: pointer;padding-right: 15px;font-size: 20px;color:red;"></i>' +
+                    '                </td> ' ;
+            }
+            else{
+                command += '<td> </td>';
+            }
+            command +=
             '            </tr> ' +
             ' ' +
             '            <tr> ' +
-            '                <td colspan="8"> ' +
+            '                <td colspan="9"> ' +
             '                   <div id="demo'+i+'" class="collapse "> ' +
             '                       <ul class="nav nav-tabs"> ' +
             '                           <li class="active"> ' +
@@ -148,6 +158,40 @@ function show() {
      }*/
 }
 
+function processBill(id) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (ev) {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+          if(this.responseText==1){
+              alert("Xử lý đơn hàng thành công");
+          }
+          else{
+              alert("Xử lý đơn hàng thất bại");
+          }
+        location.reload();
+        }
+    };
+    xhttp.open("GET","../controllers/bill-process.php?action=accept&id="+id);
+    xhttp.send();
+}
+
+
+function destroyBill(id) {
+    xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function (ev) {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+            if(this.responseText==1){
+                alert("Hủy đơn hàng thành công");
+            }
+            else{
+                alert("Hủy đơn hàng thất bại");
+            }
+            location.reload();
+        }
+    };
+    xhttp.open("GET","../controllers/bill-process.php?action=destroy&id="+id);
+    xhttp.send();
+}
 
 function searchBill() {
     var str = document.getElementById("order-search").value;

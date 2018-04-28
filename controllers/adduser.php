@@ -1,5 +1,5 @@
 <?php
-    require_once "DBConnect.php";
+   require 'DBConnect.php';
 
     $user = $_REQUEST['user'];
     $pass = $_REQUEST['pass'];

@@ -7,7 +7,7 @@ require '../controllers/get_all_products.php';
 
 <div class="container" style="margin-top: 50px;">
     <div class="col-md-12 text-left">
-        <h1 style="font-size: 30px;color:orange;">Sản Phẩm</h1>
+        <h1 style="font-size: 30px;color:orange;">DANH SÁCH SẢN PHẨM</h1>
     </div>
     <div class="col-md-12">
         <table class="table table-hover table-bordered text-center">

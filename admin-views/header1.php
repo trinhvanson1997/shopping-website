@@ -25,10 +25,13 @@
     <link href="../bootstrap/css/responsive.css" rel="stylesheet">
     <link href="../bootstrap/css/pagination.css" rel="stylesheet">
 
-
     <style>
-
+        table#table-bills  td {
+            vertical-align: middle;
+        }
     </style>
+
+
 
 </head>
 

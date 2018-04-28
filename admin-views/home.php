@@ -88,3 +88,43 @@
     </div>
 
 </header>
+
+<div class="container" style="margin-top: 50px;">
+    <div class="col-md-12 text-left">
+        <h1 style="color: orange; font-size: 30px">
+            THỐNG KÊ
+        </h1>
+    </div>
+
+    <div class="col-md-11 text-right" style="padding-bottom: 20px">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-top: 0px">
+            <i class="fa fa-bar-chart-o"></i>
+            BIỂU ĐỒ</button>
+    </div>
+
+
+    <div class="col-md-12">
+        <table class="table table-hover table-bordered text-center" id="table-bills">
+            <thead>
+            <tr>
+                <th>Mã đơn hàng</th>
+                <th>Mã nhân viên xử lý</th>
+                <th>Mã khách hàng</th>
+                <th>Tổng tiền</th>
+                <th>Ngày mua hàng</th>
+                <th>Ngày xử lý đơn</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody id="table_body">
+
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="../public/js/show-table-statis.js"></script>
+
+</body>
+</html>

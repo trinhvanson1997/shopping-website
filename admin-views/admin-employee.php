@@ -6,7 +6,7 @@
 
     <div class="col-md-12 text-left">
         <h1 style="color: orange; font-size: 30px">
-            Quản lý nhân viên
+            QUẢN LÝ NHÂN VIÊN
         </h1>
     </div>
 
