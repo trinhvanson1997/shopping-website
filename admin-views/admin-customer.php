@@ -8,7 +8,7 @@ require "header1.php"; ?>
             DANH SÁCH KHÁCH HÀNG
         </h1>
         <div class="form-group col-md-3 padd-0">
-            <input type="text" class="form-control" id="order-search" placeholder="Nhập tên khách hàng để tìm kiếm" onkeyup="searchBill()" ">
+            <input type="text" class="form-control" id="order-search" placeholder="Nhập tên khách hàng để tìm kiếm" onkeyup="searchCus()" ">
 
         </div>
         <div class="col-md-12">

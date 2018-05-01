@@ -61,7 +61,7 @@ function update(){
 
     if (name.value == ""  || address.value == "" || pass.value == "" || phone.value == "" || salary.value == ""|| user.value=="") {
 
-    alert("Các trường dữ liệu không được để trống, ĐM");
+    alert("Các trường dữ liệu không được để trống");
     }
     else {
 
@@ -151,7 +151,7 @@ function del(i) {
     xhttp.send();
 }
 
-function searchBill() {
+function searchEmp() {
     var str = document.getElementById("order-search").value.toLowerCase();
 
     var temp =[];

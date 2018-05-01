@@ -111,7 +111,7 @@ function delete_cus(i, j) {
     xhttp.send();
 }
 
-function searchBill() {
+function searchCus() {
     var str = document.getElementById("order-search").value.toLowerCase();
 
     var temp =[];

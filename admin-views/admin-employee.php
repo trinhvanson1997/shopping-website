@@ -11,7 +11,7 @@
     </div>
 
     <div class="form-group col-md-3 padd-0">
-        <input type="text" class="form-control" id="order-search" placeholder="Nhập tên nhân viên để tìm kiếm" onkeyup="searchBill()" ">
+        <input type="text" class="form-control" id="order-search" placeholder="Nhập tên nhân viên để tìm kiếm" onkeyup="searchEmp()" ">
 
     </div>
     <div class="col-md-9 text-right">

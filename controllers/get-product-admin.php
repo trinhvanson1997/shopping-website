@@ -18,12 +18,7 @@ require 'DBConnect.php';
 
     }
 
-    $sql = "SELECT count(*) FROM product ;";
-    $rs = $conn->query($sql);
-    $row = $rs->fetch_assoc();
 
-    $arr1 = ['count'=> $row['count(*)']];
-    array_push($arr,$arr1);
 
     $file = json_encode($arr);
     echo $file;
