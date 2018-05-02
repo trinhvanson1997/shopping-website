@@ -164,11 +164,13 @@ function processBill(id) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
           if(this.responseText==1){
               alert("Xử lý đơn hàng thành công");
+              location.reload();
           }
-          else{
-              alert("Xử lý đơn hàng thất bại");
+
+          else if(this.responseText == 0){
+              alert("Số lượng hàng trong kho không đủ");
           }
-        location.reload();
+
         }
     };
     xhttp.open("GET","../controllers/bill-process.php?action=accept&id="+id);

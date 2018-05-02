@@ -35,10 +35,7 @@ date_default_timezone_set("Asia/Bangkok");
 	$sql = "INSERT INTO bill_detail VALUES (".$bill_id.", ".$id.", ".$value['quantity'].");";
 	$conn->query($sql);
 
-	$newValue = $value['inventory'] - $value['quantity'];
 
-	$sql = "UPDATE product SET inventory = $newValue WHERE id = $id";
-	$conn->query($sql);
     }
 
     //cho cart về trạng thái rỗng
