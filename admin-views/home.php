@@ -97,7 +97,7 @@
     </div>
 
     <div class="col-md-11 text-right" style="padding-bottom: 20px">
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" style="margin-top: 0px">
+        <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-top: 0px" onclick="window.location = 'chart.php'">
             <i class="fa fa-bar-chart-o"></i>
             BIỂU ĐỒ</button>
     </div>
@@ -107,13 +107,13 @@
         <table class="table table-hover table-bordered text-center" id="table-bills">
             <thead>
             <tr>
-                <th>Mã đơn hàng</th>
-                <th>Mã nhân viên xử lý</th>
-                <th>Mã khách hàng</th>
-                <th>Tổng tiền</th>
-                <th>Ngày mua hàng</th>
-                <th>Ngày xử lý đơn</th>
-                <th></th>
+                <th class="text-center">Mã đơn hàng</th>
+                <th class="text-center">Mã nhân viên xử lý</th>
+                <th class="text-center">Mã khách hàng</th>
+                <th class="text-center">Tổng tiền</th>
+                <th class="text-center">Ngày mua hàng</th>
+                <th class="text-center">Ngày xử lý đơn</th>
+                <th class="text-center">Chi tiết đơn hàng</th>
             </tr>
             </thead>
             <tbody id="table_body">
