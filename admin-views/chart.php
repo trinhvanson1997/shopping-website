@@ -42,7 +42,7 @@ require_once '../controllers/get_date_bill.php';
         axisY: {
             title: "Doanh thu VND",
             valueFormatString: "#0,,.",
-            suffix: "000000 vnd",
+            suffix: ".000.000 vnd",
         },
         axisX: { 
                 interval: 2, 
@@ -69,7 +69,7 @@ require_once '../controllers/get_date_bill.php';
 	
 	<div id="chartContainer" style="height: 400px; width: 100%;"></div>
 	<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-	<div class="col-md-11 text-right" style="padding-bottom: 20px">
+	<div class="col-md-6 text-right" style="padding-bottom: 20px">
     <button type="button" class="btn btn-primary" data-toggle="modal" style="margin-top: 0px" onclick="window.location = 'home.php'">
             CLOSE</button>
     </div>

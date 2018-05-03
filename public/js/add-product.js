@@ -23,7 +23,7 @@ function addProduct(){
     var entry_date = document.getElementById("entry_date").value;
     var brand = document.getElementById("brand").value;
     var size = document.getElementById("size").value;
-
+    var detail = document.getElementById("detail").value;
 
 
 
@@ -43,7 +43,7 @@ function addProduct(){
         data.append('entry_date', entry_date);
         data.append('brand',brand);
         data.append('size',size);
-
+        data.append('detail',detail);
 
 
         var xhttp = new XMLHttpRequest();

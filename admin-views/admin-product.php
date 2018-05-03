@@ -128,7 +128,11 @@ require '../controllers/get_all_products.php';
                             <span id="confirmMessage" class="confirmMessage"></span>
                         </div>
 
+                        <div class="form-group">
+                            <label for="password2"><span class="req">* </span> Mô tả </label>
+                            <input required  type="text" class="form-control inputpass"   id="detail" />
 
+                        </div>
                         <div class="form-group text-center">
                             <button class="btn btn-success"  id="btnThem"  onclick="addProduct()">Add Product</button>
                             <button class="btn btn-success"  id="btnCancel"  onclick="cancel()">Cancel</button>
@@ -215,7 +219,11 @@ require '../controllers/get_all_products.php';
                             <input required  type="text" class="form-control inputpass"   id="size1" />
 
                         </div>
+                        <div class="form-group">
+                            <label for="password2"><span class="req">* </span> Mô tả </label>
+                            <input required  type="text" class="form-control inputpass"   id="detail1" />
 
+                        </div>
 
                         <div class="form-group text-center">
                             <button class="btn btn-success"  onclick="editProduct()">Edit Product</button>

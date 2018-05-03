@@ -55,21 +55,9 @@
     <div class="row">
         <div class="col-md-6 col-md-offset-6">
             <div class="input-group">
-                <div class="input-group-btn search-panel">
-                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                        <span id="search_concept">Filter by</span> <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#contains">Contains</a></li>
-                        <li><a href="#its_equal">It's equal</a></li>
-                        <li><a href="#greather_than">Greather than ></a></li>
-                        <li><a href="#less_than">Less than < </a></li>
-                        <li class="divider"></li>
-                        <li><a href="#all">Anything</a></li>
-                    </ul>
-                </div>
+
                 <input type="hidden" name="search_param" value="all" id="search_param">
-                <input type="text" class="form-control" name="x" placeholder="Tìm kiếm" id="searchBox">
+                <input type="text" class="form-control" name="x" placeholder="Tìm kiếm theo tên sản phẩm" id="searchBox">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button" onclick="searchProducts()"><span
                                 class="glyphicon glyphicon-search"></span></button>
@@ -265,4 +253,6 @@
 <script src="../public/js/show_list_product.js"></script>
 <script src="../public/js/login_index.js"></script>
 </body>
+
+<?php include 'footer.php'; ?>
 </html>

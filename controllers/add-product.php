@@ -9,9 +9,10 @@ $sell = $_REQUEST['sell_price'];
 $entry = $_REQUEST['entry_date'];
 $brand = $_REQUEST['brand'];
 $size = $_REQUEST['size'];
+$detail = $_REQUEST['detail'];
 
 $sql = "INSERT INTO product values (null,'$name','$type',$inventory,
-$buy,$sell,'2018-1-1 12:12:12','$brand','$size','product1.jpg')";
+$buy,$sell,'2018-1-1 12:12:12','$brand','$size','product1.jpg','$detail')";
 
 if($conn->query($sql)){
     echo 1;

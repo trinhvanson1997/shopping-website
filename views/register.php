@@ -97,8 +97,8 @@
 
 
                         <div class="form-group text-center">
-                        <button class="btn btn-success"  id="btnRegister"  onclick="register()">Register</button>
-                        <button class="btn btn-success"  id="btnCancel"  onclick="cancel()">Cancel</button>
+                        <button class="btn btn-success"  id="btnRegister"  onclick="register()">Đăng ký</button>
+                        <button class="btn btn-success"  id="btnCancel"  onclick="cancel()">Hủy</button>
                         </div>
 
                     </form>

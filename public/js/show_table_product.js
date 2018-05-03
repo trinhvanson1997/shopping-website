@@ -73,6 +73,7 @@ function showmodal(i){
     document.getElementById("entry_date1").value = msg[i].entry_date;
     document.getElementById("brand1").value = msg[i].brand;
     document.getElementById("size1").value = msg[i].size;
+    document.getElementById("detail1").value = msg[i].detail;
     $("#myModal1").modal();
 }
 
@@ -100,6 +101,7 @@ var id = document.getElementById("id1").value;
     var entry_date = document.getElementById("entry_date1").value;
     var brand = document.getElementById("brand1").value;
     var size = document.getElementById("size1").value;
+    var detail = document.getElementById("detail1").value;
 
 
 
@@ -122,6 +124,7 @@ var id = document.getElementById("id1").value;
         data.append('entry_date', entry_date);
         data.append('brand',brand);
         data.append('size',size);
+        data.append('detail',detail);
 
 
 

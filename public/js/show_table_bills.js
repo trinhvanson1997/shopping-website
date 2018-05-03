@@ -150,8 +150,14 @@ function show() {
         }
         showTableBills(temp);
     }
-    else{
-        showTableBills(msg);
+    else if(selectedValue == 2){
+        var temp =[];
+        for(var i = 0; i<msg.length;i++){
+            if(msg[i].status == "destroy"){
+                temp.push(msg[i]);
+            }
+        }
+        showTableBills(temp);
     }
     /* else if(selectedValue == 2){
 
