@@ -111,11 +111,7 @@ require '../controllers/get_all_products.php';
                             <div class="status" id="status"></div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="username"><span class="req">* </span> Ngày nhập hàng  </label>
-                            <input class="form-control" type="date" id = "entry_date"  name="username" required />
-                            <div id="errLast"></div>
-                        </div>
+
 
                         <div class="form-group">
                             <label for="password"><span class="req">* </span> Thương hiệu </label>
@@ -203,11 +199,7 @@ require '../controllers/get_all_products.php';
                             <div class="status" id="status"></div>
                         </div>
 
-                        <div class="form-group">
-                            <label for="username"><span class="req">* </span> Ngày nhập hàng  </label>
-                            <input class="form-control" type="date" id = "entry_date1"  name="username" required />
 
-                        </div>
 
                         <div class="form-group">
                             <label for="password"><span class="req">* </span> Thương hiệu </label>

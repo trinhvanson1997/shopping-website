@@ -20,14 +20,14 @@ function addProduct(){
     var inventory = document.getElementById("inventory").value;
     var buy_price = document.getElementById("buy_price").value;
     var sell_price = document.getElementById("sell_price").value;
-    var entry_date = document.getElementById("entry_date").value;
+
     var brand = document.getElementById("brand").value;
     var size = document.getElementById("size").value;
     var detail = document.getElementById("detail").value;
 
 
 
-    if (name == ""  || type == "" || inventory == "" || buy_price== "" || sell_price == "" || entry_date == "" || brand == "" || size =="") {
+    if (name == ""  || type == "" || inventory == "" || buy_price== "" || sell_price == ""|| brand == "" || size =="") {
 
         alert("Các trường dữ liệu không được để trống");
     }
@@ -40,7 +40,7 @@ function addProduct(){
         data.append('inventory', inventory);
         data.append('buy_price', buy_price);
         data.append('sell_price', sell_price);
-        data.append('entry_date', entry_date);
+
         data.append('brand',brand);
         data.append('size',size);
         data.append('detail',detail);

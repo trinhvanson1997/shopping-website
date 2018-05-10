@@ -4,6 +4,7 @@ function loadData() {
     xhttp.onreadystatechange = function (ev) {
         if (xhttp.readyState == 4 && xhttp.status == 200) {
             msg = JSON.parse(this.responseText);
+
             show_table_product(msg);
 
         }
@@ -18,7 +19,7 @@ window.onload = loadData();
 
 function show_table_product(msg) {
     command = "";
-    for (var i = 0;i < msg.length - 1;i++) {
+    for (var i = 0;i < msg.length ;i++) {
 
          buy = msg[i].sell_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
          sell = msg[i].buy_price.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1,") +" VNĐ";
@@ -70,7 +71,7 @@ function showmodal(i){
     document.getElementById("inventory1").value = msg[i].inventory;
     document.getElementById("buy_price1").value = msg[i].buy_price;
     document.getElementById("sell_price1").value = msg[i].sell_price;
-    document.getElementById("entry_date1").value = msg[i].entry_date;
+
     document.getElementById("brand1").value = msg[i].brand;
     document.getElementById("size1").value = msg[i].size;
     document.getElementById("detail1").value = msg[i].detail;
@@ -98,7 +99,7 @@ var id = document.getElementById("id1").value;
     var inventory = document.getElementById("inventory1").value;
     var buy_price = document.getElementById("buy_price1").value;
     var sell_price = document.getElementById("sell_price1").value;
-    var entry_date = document.getElementById("entry_date1").value;
+
     var brand = document.getElementById("brand1").value;
     var size = document.getElementById("size1").value;
     var detail = document.getElementById("detail1").value;
@@ -107,7 +108,7 @@ var id = document.getElementById("id1").value;
 
 
 
-    if (name == ""  || type == "" || inventory == "" || buy_price== "" || sell_price == "" || entry_date == "" || brand == "" || size =="") {
+    if (name == ""  || type == "" || inventory == "" || buy_price== "" || sell_price == "" || brand == "" || size =="") {
 
         alert("Các trường dữ liệu không được để trống");
     }
@@ -121,7 +122,7 @@ var id = document.getElementById("id1").value;
         data.append('inventory', inventory);
         data.append('buy_price', buy_price);
         data.append('sell_price', sell_price);
-        data.append('entry_date', entry_date);
+
         data.append('brand',brand);
         data.append('size',size);
         data.append('detail',detail);
