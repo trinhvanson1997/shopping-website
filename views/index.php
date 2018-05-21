@@ -47,7 +47,7 @@
 <!-- BODYYYYYYYYYYYYYYYY-->
 <div class="container" style="padding-bottom: 20px;">
     <p class="modal-title text-center" style="color:orange; font-size: 30px; font-family: 'Roboto', sans-serif"
-       id="products">PRODUCTS</p>
+       id="products">SẢN PHẨM</p>
 
 </div>
 
@@ -84,17 +84,17 @@
 
                         <a href="#demo1" class="list-group-item list-group-item-success" data-toggle="collapse"><b>THỜI
                                 TRANG NỮ <span class="caret"></span></b></a>
-                        <div class="collapse" id="demo1">
-                            <a  class="list-group-item" style="padding-left: 40px; cursor: pointer;" onclick="getProductByType('ANU')">ÁO NỮ THỜI TRANG</a>
-                            <a  class="list-group-item" style="padding-left: 40px;cursor: pointer;" onclick="getProductByType('QNU')">QUẦN VÀ VÁY NỮ</a>
+                        <div class="collapse " id="demo1">
+                            <a  class="list-group-item" href="#ao-nu-thoi-trang" style="padding-left: 40px; cursor: pointer;" onclick="getProductByType('ANU')">ÁO NỮ THỜI TRANG</a>
+                            <a  class="list-group-item" href="#quan-va-vay-nu" style="padding-left: 40px;cursor: pointer;" onclick="getProductByType('QNU')">QUẦN VÀ VÁY NỮ</a>
 
                         </div>
 
                         <a href="#demo2" class="list-group-item list-group-item-success" data-toggle="collapse"><b>THỜI
                                 TRANG NAM <span class="caret"></span></b></a>
                         <div class="collapse" id="demo2">
-                            <a class="list-group-item" style="padding-left: 40px;cursor: pointer;" onclick="getProductByType('QNA')">QUẦN NAM THỜI TRANG</a>
-                            <a class="list-group-item" style="padding-left: 40px;cursor: pointer;" onclick="getProductByType('ANA')">ÁO NAM CÁC LOẠI</a>
+                            <a class="list-group-item" href="#quan-nam-thoi-trang" style="padding-left: 40px;cursor: pointer;" onclick="getProductByType('QNA')">QUẦN NAM THỜI TRANG</a>
+                            <a class="list-group-item" href="#ao-nam-cac-loai" style="padding-left: 40px;cursor: pointer;" onclick="getProductByType('ANA')">ÁO NAM CÁC LOẠI</a>
 
                         </div>
 
@@ -207,7 +207,7 @@
 <hr>
 <div class="container" style="padding-bottom: 20px;">
     <p class="modal-title text-center" style="color:orange; font-size: 30px; font-family: 'Roboto', sans-serif"
-       id="products">LOCATION</p>
+       id="products">VỊ TRÍ</p>
 </div>
 <footer>
     <!-- create maps -->

@@ -84,7 +84,7 @@ function register(){
                     alert("Tên đăng nhập đã tồn tại/nVui lòng chọn tên khác!");
                 }
                 else if (msg == 'success') {
-                    alert("Đăng ký thành công");
+                    alert("Đã gửi thông tin đăng ký, đang chờ phê duyệt");
                     window.location = "index.php";
                 }
             }

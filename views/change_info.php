@@ -23,7 +23,7 @@
         <div class="col-md-6 col-md-offset-3">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <h1>CHANGE INFORMATION</h1>
+                    <h1>THÔNG TIN CÁ NHÂN</h1>
                 </div>
                 <div class="panel-body">
                     <form action="" method="post" role="form">
@@ -32,34 +32,34 @@
 
                         </div>
                         <div class="form-group">
-                            <label for="">Name</label>
+                            <label for="">Họ tên</label>
                             <input type="text" class="form-control" name="" id="name" placeholder="Type your name here">
                         </div>
                         <div class="form-group">
-                            <label for="">Birthday</label>
+                            <label for="">Ngày sinh</label>
                             <input type="date" class="form-control" name="" id="birthday"
                                    placeholder="Type your birthday here">
                         </div>
                         <div class="form-group">
-                            <label for="">Address</label>
+                            <label for="">Địa chỉ</label>
                             <input type="text" class="form-control" name="" id="address"
                                    placeholder="Type your address here">
                         </div>
                         <div class="form-group">
-                            <label for="">Phone</label>
+                            <label for="">Số điện thoại</label>
                             <input type="text" class="form-control" name="" id="phone"
                                    placeholder="Type your phone number here">
                         </div>
 
                         <div class="form-group">
-                            <label for="">Username</label>
+                            <label for="">Tên tài khoản</label>
                             <input type="text" class="form-control" name="" id="username"
                                    placeholder="Type your username here" value="<?php
                             echo $_SESSION['username'];
                             ?>">
                         </div>
                         <div class="form-group">
-                            <label for="">Password</label>
+                            <label for="">Mật khẩu</label>
                             <input type="text" class="form-control" name="" id="password"
                                    placeholder="Type your password here">
                         </div>
@@ -67,10 +67,10 @@
 
                         <div class="row">
                             <div class="col-md-6">
-                                <button class="btn btn-primary btn-block" id="btnChange">Update</button>
+                                <button class="btn btn-primary btn-block" id="btnChange">Cập nhật</button>
                             </div>
                             <div class="col-md-6">
-                                <button class="btn btn-primary btn-block" id="btnCancel">Cancel</button>
+                                <button class="btn btn-primary btn-block" id="btnCancel">Trở lại</button>
                             </div>
                         </div>
                     </form>

@@ -82,11 +82,11 @@ function showListProducts(msg) {
                                     
             '                           <div class="add-to-cart">' +
             '                                <button class="btn btn-default cart-product" style="color: black ;" onclick="addProduct('+msg[i].id+', \''+msg[i].name+'\', '+msg[i].sell_price+', '+msg[i].inventory+')"  ><i' +
-            '                                 class="glyphicon glyphicon-shopping-cart" ></i>Add to cart</button>' +
+            '                                 class="glyphicon glyphicon-shopping-cart" ></i>Thêm vào giỏ</button>' +
                 '                       </div>'+
                 '                       <div class="detail-product " style="background: #ff9f1a;    border: none;      font-weight: bold;  color: #font-family:fantasy;;    text-decoration:none;-webkit-transition: background .3s ease;transition: background .3s ease; ">' +
             '                                <button class="btn btn-default cart-product" ><i' +
-            '                                class="fa fa-edit" style="color: black"></i> <a href="product_detail.php?id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'&brand='+msg[i].brand+'&size='+msg[i].size+'&img='+msg[i].img+'&gender='+msg[i].type_id+'&detail='+msg[i].detail+'&inventory='+msg[i].inventory+'&material='+msg[i].material+'" style="color: black ;">Detail product</a></button>' +
+            '                                class="fa fa-edit" style="color: black"></i> <a href="product_detail.php?id='+msg[i].id+'&name='+msg[i].name+'&price='+msg[i].sell_price+'&brand='+msg[i].brand+'&size='+msg[i].size+'&img='+msg[i].img+'&gender='+msg[i].type_id+'&detail='+msg[i].detail+'&inventory='+msg[i].inventory+'&material='+msg[i].material+'" style="color: black ;">Xem chi tiết</a></button>' +
             '                           </div>'+
             '                        </div>'+
             '                </div>'+

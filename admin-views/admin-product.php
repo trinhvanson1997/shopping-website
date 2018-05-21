@@ -129,6 +129,11 @@ require '../controllers/get_all_products.php';
                             <input required  type="text" class="form-control inputpass"   id="detail" />
 
                         </div>
+
+                        <div class="form-group">
+                            <input class="form-control" type="file" id="image-product">
+
+                        </div>
                         <div class="form-group text-center">
                             <button class="btn btn-success"  id="btnThem"  onclick="addProduct()">Add Product</button>
                             <button class="btn btn-success"  id="btnCancel"  onclick="cancel()">Cancel</button>

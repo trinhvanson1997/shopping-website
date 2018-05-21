@@ -24,7 +24,8 @@ function addProduct(){
     var brand = document.getElementById("brand").value;
     var size = document.getElementById("size").value;
     var detail = document.getElementById("detail").value;
-
+    var image_name = document.getElementById("image-product").files.item(0).name;
+    var image_src = document.getElementById("image-product").value;
 
 
     if (name == ""  || type == "" || inventory == "" || buy_price== "" || sell_price == ""|| brand == "" || size =="") {
@@ -44,9 +45,11 @@ function addProduct(){
         data.append('brand',brand);
         data.append('size',size);
         data.append('detail',detail);
-
+        data.append('image-name',image_name);
+        data.append('image-src',image_src);
 
         var xhttp = new XMLHttpRequest();
+
         xhttp.onreadystatechange = function (ev) {
             if (xhttp.readyState == 4 && xhttp.status == 200) {
                 var msg = this.responseText;

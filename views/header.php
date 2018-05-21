@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>BK SHOP</title>
     <!-- Latest compiled and minified CSS & JS -->
     <!-- Latest compiled and minified CSS & JS -->
     <script
@@ -54,12 +54,12 @@
                     <center>
                         <div class="navbar-collapse collapse" id="navbar-main">
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.php">HOME</a>
+                                <li class="active"><a href="index.php">TRANG CHỦ</a>
                                 </li>
 
-                                <li><a href="index.php#products">Products</a>
+                                <li><a href="index.php#products">SẢN PHẨM</a>
                                 </li>
-                                <li><a href="index.php#location">Locate</a>
+                                <li><a href="index.php#location">VỊ TRÍ</a>
                                 </li>
 
                             </ul>
@@ -71,14 +71,14 @@
                                 if(empty($_SESSION['username'])){
                                     echo '<form class="navbar-form navbar-right" role="search">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="username" placeholder="Username">
+                                        <input type="text" class="form-control" id="username" placeholder="Tài khoản">
                                     </div>
                                     <div class="form-group">
-                                        <input type="password" class="form-control" id="password" placeholder="Password">
+                                        <input type="password" class="form-control" id="password" placeholder="Mật khẩu">
                                     </div>
-                                    <button  class="btn btn-default" onclick="checkLogin()" >Login</button>
+                                    <button  class="btn btn-default" onclick="checkLogin()" >Đăng nhập</button>
                                     <span>Or</span>
-                                    <button  class="btn btn-default" ><a href="register.php" style="color:black ;text-decoration: none;">Register</a></button>
+                                    <button  class="btn btn-default" ><a href="register.php" style="color:black ;text-decoration: none;">Đăng ký</a></button>
                                 </form>
                             </div>';
                                 }
